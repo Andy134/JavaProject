@@ -5,6 +5,7 @@
  */
 package javaapplication2;
 
+import Agency.Agency;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +21,13 @@ public class JavaApplication2 {
     public static void main(String[] args) {
         // TODO code application logic here
         ExcelWoring excelWorking = new ExcelWoring();
-        List agencyList = new ArrayList();
-        agencyList = excelWorking.getAgencyFromExcel();
+        ArrayList<Agency> agencyList = new ArrayList<>();
+        agencyList = excelWorking.readAgencyFromExcel();
+        //for (int i = 0; i < agencyList.size(); i++) {
+        //    System.out.println(agencyList.get(i).getDescription());
+        //}
         
-        System.out.println(agencyList);
+        excelWorking.writeAgencyToExcel(agencyList);
     }
-    
+
 }

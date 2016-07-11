@@ -22,8 +22,9 @@ public class Agency {
     private String address;
     // Need to split from des:
     private String scale;
+    private String nameofagency;
     private String location;
-
+    private String info;
     /**
      * @return the name
      */
@@ -190,6 +191,34 @@ public class Agency {
      */
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    /**
+     * @return the nameofagency
+     */
+    public String getNameofagency() {
+        return nameofagency;
+    }
+
+    /**
+     * @param nameofagency the nameofagency to set
+     */
+    public void setNameofagency(String nameofagency) {
+        this.nameofagency = nameofagency;
+    }
+
+    /**
+     * @return the info
+     */
+    public String getInfo() {
+        return info;
+    }
+
+    /**
+     * @param info the info to set
+     */
+    public void setInfo(String info) {
+        this.info = info;
     }
     
 }
