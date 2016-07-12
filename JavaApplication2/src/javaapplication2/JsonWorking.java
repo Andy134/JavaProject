@@ -5,6 +5,7 @@
  */
 package javaapplication2;
 
+import Agency.Agency;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -16,6 +17,6 @@ public class JsonWorking {
     
     public void JsontoJava(){
          Gson gson = new GsonBuilder().create();
-         Agency a = gson.fromJson(reader, Person.class);
+         //Agency a = gson.fromJson(reader, Person.class);
     }
 }
