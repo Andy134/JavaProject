@@ -23,6 +23,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 /**
  *
@@ -56,8 +58,12 @@ public class JsonWorking {
             jsonCustomize = jsonCustomize.substring(0, jsonCustomize.lastIndexOf(","));
             jsonCustomize += "]";
             
+            
+            
             agencyList = gson.fromJson(jsonCustomize, new TypeToken<ArrayList<Agency>>() {
             }.getType());
+            
+            removeHtmlTags(agencyList);
             return agencyList;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(JsonWorking.class.getName()).log(Level.SEVERE, null, ex);
@@ -66,5 +72,16 @@ public class JsonWorking {
         }
         
         return agencyList;
+    }
+    
+    private void removeHtmlTags(ArrayList<Agency> agencyList){
+        
+        for(Agency agency : agencyList){
+            String htmlDes = agency.getDescription();
+            Document doc = Jsoup.parse(htmlDes);
+            
+            agency.setDescription(doc.text());
+        }
+       
     }
 }

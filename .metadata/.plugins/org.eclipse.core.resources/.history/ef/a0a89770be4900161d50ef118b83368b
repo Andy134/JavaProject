@@ -1,0 +1,12 @@
+package demoPackage;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Kieu du lieu + ten bieb + gia tri khoi tao(ko bat buoc)
+			// ten bien chua cac ky tu Unicoxde, chu so, ky tu
+		
+	}
+
+}

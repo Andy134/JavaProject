@@ -29,8 +29,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelWoring {
 
     private static final String File_input = "..\\JavaApplication2\\src\\data\\Dulieumoigioi.xlsx";
-    private static final String FILE_output = "..\\JavaApplication2\\src\\data\\Dulieumoigioi(output).xlsx";
-
+    //private static final String FILE_output_fromJson = "..\\JavaApplication2\\src\\data\\Dulieumoigioi(Json_output).xlsx";
+    private static final String FILE_output_splitDes = "..\\JavaApplication2\\src\\data\\Dulieumoigioi(output).xlsx";
     public static ArrayList<Agency> readAgencyFromExcel() {
         ArrayList<Agency> agencyList = new ArrayList();
         FileInputStream fis = null;
@@ -135,7 +135,7 @@ public class ExcelWoring {
         return agencyList;
     }
 
-    public static void writeAgencyDescriptionToExcel(ArrayList<Agency> agencyList) {
+    public void splitDescription(ArrayList<Agency> agencyList) {
         // Using XSSF for xlsx format, for xls use HSSF
         Workbook workbook = new XSSFWorkbook();
         Sheet agencySheet = workbook.createSheet("Agency");
@@ -159,7 +159,7 @@ public class ExcelWoring {
                 // if scale is "ca nhan moi gioi" 
                 scaleType = 0;
             } else {
-                scale = scale.substring(0, scale.indexOf("."));
+                scale = scale.substring(0, scale.indexOf(".")+1);
                 scaleType = 1;
             }
             scale = scale.replaceAll("^\\s+", "");
@@ -199,10 +199,10 @@ public class ExcelWoring {
         }
         //write this workbook in excel file.
         try {
-            FileOutputStream fos = new FileOutputStream(FILE_output);
+            FileOutputStream fos = new FileOutputStream(FILE_output_splitDes);
             workbook.write(fos);
             fos.close();
-            System.out.println(FILE_output + " is successfully written");
+            System.out.println(FILE_output_splitDes + " is successfully written");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -210,7 +210,7 @@ public class ExcelWoring {
         }
 
     }
-
+/*
     public static void writeAgencyToExcel(ArrayList<Agency> agencyList) {
         Workbook workbook = new XSSFWorkbook();
         Sheet agencySheet = workbook.createSheet("Agency");
@@ -221,14 +221,25 @@ public class ExcelWoring {
             Row row = agencySheet.createRow(rowIndex++);
             int cellIndex = 0;
             //first place in row is name
-            row.createCell(cellIndex++).setCellValue(agency.getWebsite());
-            row.createCell(cellIndex++).setCellValue(agency.getFax());
-            row.createCell(cellIndex++).setCellValue(agency.getName());
-            row.createCell(cellIndex++).setCellValue(agency.getMobile());
+            row.createCell(cellIndex++).setCellValue(agency.getDescription());
+            //row.createCell(cellIndex++).setCellValue(agency.getWebsite());
+            //row.createCell(cellIndex++).setCellValue(agency.getFax());
+            //row.createCell(cellIndex++).setCellValue(agency.getName());
+            //row.createCell(cellIndex++).setCellValue(agency.getMobile());
             //row.createCell(cellIndex++).setCellValue(agency.getDescription());
-            row.createCell(cellIndex++).setCellValue(agency.getPhone());
-            row.createCell(cellIndex++).setCellValue(agency.getEmail());
+            //row.createCell(cellIndex++).setCellValue(agency.getPhone());
+            //row.createCell(cellIndex++).setCellValue(agency.getEmail());
         }
+        //write this workbook in excel file.
+        try (FileOutputStream fos = new FileOutputStream(FILE_output)) {
+            workbook.write(fos);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(FILE_output + " is successfully written");
     }
+*/
 
 }

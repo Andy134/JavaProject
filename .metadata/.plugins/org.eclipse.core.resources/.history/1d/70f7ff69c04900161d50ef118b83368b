@@ -1,0 +1,21 @@
+package demoPackage;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Kieu du lieu + ten bieb + gia tri khoi tao(ko bat buoc)
+		// ten bien chua cac ky tu Unicoxde, chu so, ky tu
+		// phan biet Hoa thuong
+		// khuyen khich la tieng Anh
+		// tranh: khong trung tu khoa trong java, khong bat dau bang so, ko chua
+		// ky tu dac biet
+
+		int age = 23;
+		
+		//xuat thong bao
+		System.out.println("tuổi" + age);
+		
+	}
+
+}

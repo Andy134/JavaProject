@@ -30,7 +30,7 @@ public class JavaApplication2 {
         JsonWorking jsonWorking = new JsonWorking();
         agencyList = jsonWorking.JsontoJava();
         ExcelWoring excelWoring = new ExcelWoring();
-        ExcelWoring.writeAgencyToExcel(agencyList);
+        excelWoring.splitDescription(agencyList);
     }
 
 }
