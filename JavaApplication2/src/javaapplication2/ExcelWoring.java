@@ -28,8 +28,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class ExcelWoring {
 
-    private static final String File_input = "..\\JavaApplication2\\src\\javaapplication2\\Dulieumoigioi.xlsx";
-    private static final String FILE_output = "..\\JavaApplication2\\src\\javaapplication2\\Dulieumoigioi(output).xlsx";
+    private static final String File_input = "..\\JavaApplication2\\src\\data\\Dulieumoigioi.xlsx";
+    private static final String FILE_output = "..\\JavaApplication2\\src\\data\\Dulieumoigioi(output).xlsx";
 
     public static ArrayList<Agency> readAgencyFromExcel() {
         ArrayList<Agency> agencyList = new ArrayList();
@@ -135,7 +135,7 @@ public class ExcelWoring {
         return agencyList;
     }
 
-    public static void writeAgencyToExcel(ArrayList<Agency> agencyList) {
+    public static void writeAgencyDescriptionToExcel(ArrayList<Agency> agencyList) {
         // Using XSSF for xlsx format, for xls use HSSF
         Workbook workbook = new XSSFWorkbook();
         Sheet agencySheet = workbook.createSheet("Agency");
@@ -176,8 +176,7 @@ public class ExcelWoring {
             location = des.replaceFirst("(.*)" + locationDelimit, "");
             if (scaleType == 0) {
                 location = location.replaceFirst(infoDelimit + "(.*)", "");
-            }
-            else{
+            } else {
                 location = location.replaceFirst(comIntroDelimit + "(.*)", "");
             }
             location = location.replaceAll("^\\s+", "");
@@ -185,10 +184,11 @@ public class ExcelWoring {
             String info;
             if (scaleType == 0) {
                 info = des.replaceFirst("(.*)" + infoDelimit, "");
+            } else {
+                info = des.replaceFirst("(.*)" + comIntroDelimit, "");
             }
-            else info = des.replaceFirst("(.*)" + comIntroDelimit, "");
             info = info.replaceAll("^\\s+", "");
-            
+
             Row row = agencySheet.createRow(rowIndex++);
             int cellIndex = 0;
             //first place in row is name
@@ -209,6 +209,26 @@ public class ExcelWoring {
             e.printStackTrace();
         }
 
+    }
+
+    public static void writeAgencyToExcel(ArrayList<Agency> agencyList) {
+        Workbook workbook = new XSSFWorkbook();
+        Sheet agencySheet = workbook.createSheet("Agency");
+        int rowIndex = 0;
+
+        for (Agency agency : agencyList) {
+
+            Row row = agencySheet.createRow(rowIndex++);
+            int cellIndex = 0;
+            //first place in row is name
+            row.createCell(cellIndex++).setCellValue(agency.getWebsite());
+            row.createCell(cellIndex++).setCellValue(agency.getFax());
+            row.createCell(cellIndex++).setCellValue(agency.getName());
+            row.createCell(cellIndex++).setCellValue(agency.getMobile());
+            //row.createCell(cellIndex++).setCellValue(agency.getDescription());
+            row.createCell(cellIndex++).setCellValue(agency.getPhone());
+            row.createCell(cellIndex++).setCellValue(agency.getEmail());
+        }
     }
 
 }

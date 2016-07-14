@@ -20,14 +20,17 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ExcelWoring excelWorking = new ExcelWoring();
-        ArrayList<Agency> agencyList = new ArrayList<>();
-        agencyList = excelWorking.readAgencyFromExcel();
+        ArrayList<Agency> agencyList;
+        //ExcelWoring excelWorking = new ExcelWoring();
+        //agencyList = excelWorking.readAgencyFromExcel();
         //for (int i = 0; i < agencyList.size(); i++) {
         //    System.out.println(agencyList.get(i).getDescription());
         //}
-        
-        excelWorking.writeAgencyToExcel(agencyList);
+        //excelWorking.writeAgencyToExcel(agencyList);
+        JsonWorking jsonWorking = new JsonWorking();
+        agencyList = jsonWorking.JsontoJava();
+        ExcelWoring excelWoring = new ExcelWoring();
+        ExcelWoring.writeAgencyToExcel(agencyList);
     }
 
 }

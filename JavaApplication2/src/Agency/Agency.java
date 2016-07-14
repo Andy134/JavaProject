@@ -10,9 +10,10 @@ package Agency;
  * @author TuanAnh
  */
 public class Agency {
-    private String name;
+    
     private String website;
     private String fax;
+    private String name;
     private String mobile;
     private String description;
     private String taxId;
