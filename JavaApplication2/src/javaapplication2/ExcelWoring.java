@@ -114,9 +114,9 @@ public class ExcelWoring {
                             case 9:
                                 //agency.setAddress(cell.getStringCellValue());
                                 if (Cell.CELL_TYPE_STRING == cell.getCellType()) {
-                                    agency.setAddress(cell.getStringCellValue());
+                                    agency.setAddr(cell.getStringCellValue());
                                 } else if (Cell.CELL_TYPE_NUMERIC == cell.getCellType()) {
-                                    agency.setAddress(cell.getNumericCellValue() + "");
+                                    agency.setAddr(cell.getNumericCellValue() + "");
                                 }
                         }
                         //agency.setName(cell.getStringCellValue());  
@@ -180,6 +180,14 @@ public class ExcelWoring {
                 location = location.replaceFirst(comIntroDelimit + "(.*)", "");
             }
             location = location.replaceAll("^\\s+", "");
+            location = location.replaceAll("(*.) ở ", "");
+            
+            //location = location.replaceAll("Cho thuê căn hộ chung cư ở ", "");
+            
+        
+            
+            
+            
             // Split basic information
             String info;
             if (scaleType == 0) {
@@ -241,5 +249,117 @@ public class ExcelWoring {
         System.out.println(FILE_output + " is successfully written");
     }
 */
+// Method tao du lieu moi gioi
+    public void agencyDocumentCreation(ArrayList<Agency> agencyList) {
+        // Using XSSF for xlsx format, for xls use HSSF
+        Workbook workbook = new XSSFWorkbook();
+        Sheet agencySheet = workbook.createSheet("Agency");
+        String des, scale, nameofagency, location, info;
+        String stt, name, address, mobile, email, phone, website, city;
+        String scaleDelimit = "Khu vực";
+        int scaleType = 0;
+        String scaleType0 = "cá nhân môi giới";
+        String scaleType1 = "công ty môi giới";
+        String nameofagencyDelimit = "Nhà môi giới";
+        String locationDelimit = "môi giới ở những khu vực sau:";
+        String infoDelimit = "Thông tin cá nhân";
+        String comIntroDelimit = "Giới thiệu công ty";
+        int rowIndex = 0;
+        Row row = agencySheet.createRow(rowIndex);
+            int cellIndex = 0;
+            //first place in row is name
+            row.createCell(cellIndex++).setCellValue("STT");
+            row.createCell(cellIndex++).setCellValue("Loại hình");
+            row.createCell(cellIndex++).setCellValue("Họ tên");
+            row.createCell(cellIndex++).setCellValue("URL");
+            row.createCell(cellIndex++).setCellValue("Địa chỉ");
+            row.createCell(cellIndex++).setCellValue("Địa phương");
+            row.createCell(cellIndex++).setCellValue("Điện thoại");
+            row.createCell(cellIndex++).setCellValue("Di động");
+            row.createCell(cellIndex++).setCellValue("Email");
+            row.createCell(cellIndex++).setCellValue("Website");
+            row.createCell(cellIndex++).setCellValue("Nội dung tự giới thiệu");
+        rowIndex = 1;
+        for (Agency agency : agencyList) {
+            des = agency.getDescription();
+            name = agency.getName();
+            // DESCRIPTION
+            // Split Scale information
+           
+            scale = des.replaceFirst(scaleDelimit, "").replaceFirst(nameofagencyDelimit + ".*", "");
+            if (scale.substring(0, scale.length()).contains(scaleType0)) {
+                // if scale is "ca nhan moi gioi" 
+                scaleType = 0;
+            } else {
+                scale = scale.substring(0, scale.indexOf(".")+1);
+                scaleType = 1;
+            }
+            scale = scale.replaceAll("^\\s+", "");
+            // Split nameofagency information
+            
+            if (scaleType == 0) {
+                nameofagency = des.replaceFirst("(.*)" + nameofagencyDelimit, "").replaceFirst(locationDelimit + "(.*)", "");
+            } else {
+                nameofagency = name;
+            }
+            nameofagency = nameofagency.replaceAll("^\\s+", "");
+            // Split location information
+            
+            location = des.replaceFirst("(.*)" + locationDelimit, "");
+            if (scaleType == 0) {
+                location = location.replaceFirst(infoDelimit + "(.*)", "");
+            } else {
+                location = location.replaceFirst(comIntroDelimit + "(.*)", "");
+            }
+            location = location.replaceAll("^\\s+", "");
+            // Split basic information
+            
+            if (scaleType == 0) {
+                info = des.replaceFirst("(.*)" + infoDelimit, "");
+            } else {
+                info = des.replaceFirst("(.*)" + comIntroDelimit, "");
+            }
+            info = info.replaceAll("^\\s+", "");
+            des = "Khu vực: "+scale+"\012";  
+            des+= "Nhà môi giới: "+nameofagency+"\012";
+            des+= "Môi giới ở những khu vực: "+ location+"\012";
+            des+= "Thông tin cá nhân:\012"+ info;
+            //OTHER INFORMATION
+            address = agency.getAddr();
+            phone = agency.getPhone();
+            mobile = agency.getMobile();
+            email = agency.getEmail();
+            website = agency.getWebsite();
+            // Split city
+            String addressCode = address.toLowerCase();
+            
+            // Import to excel
+            row = agencySheet.createRow(rowIndex++);
+            cellIndex = 0;
+            //first place in row is name
+            row.createCell(cellIndex++).setCellValue(rowIndex++); // STT
+            row.createCell(cellIndex++).setCellValue(scale);
+            row.createCell(cellIndex++).setCellValue(name);
+            row.createCell(cellIndex++).setCellValue("");
+            row.createCell(cellIndex++).setCellValue(address);
+            row.createCell(cellIndex++).setCellValue("");
+            row.createCell(cellIndex++).setCellValue(phone);
+            row.createCell(cellIndex++).setCellValue(mobile);
+            row.createCell(cellIndex++).setCellValue(email);
+            row.createCell(cellIndex++).setCellValue(website);
+            row.createCell(cellIndex++).setCellValue(des);
+        }
+        //write this workbook in excel file.
+        try {
+            FileOutputStream fos = new FileOutputStream(FILE_output_splitDes);
+            workbook.write(fos);
+            fos.close();
+            System.out.println(FILE_output_splitDes + " is successfully written");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 }

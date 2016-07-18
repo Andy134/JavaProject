@@ -20,11 +20,12 @@ public class Agency {
     private String phone;
     private String avatar;
     private String email;
-    private String address;
+    private String addr;
     // Need to split from des:
     private String scale;
     private String nameofagency;
     private String location;
+    
     private String info;
     /**
      * @return the name
@@ -155,15 +156,15 @@ public class Agency {
     /**
      * @return the address
      */
-    public String getAddress() {
-        return address;
+    public String getAddr() {
+        return addr;
     }
 
     /**
      * @param address the address to set
      */
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
     /**
@@ -221,5 +222,9 @@ public class Agency {
     public void setInfo(String info) {
         this.info = info;
     }
+
+    /**
+     * @return the locationList
+     */
     
 }

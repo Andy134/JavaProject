@@ -1,0 +1,66 @@
+package demoPackage;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 1. Kieu du lieu + ten bieb + gia tri khoi tao(ko bat buoc)
+		// ten bien chua cac ky tu Unicoxde, chu so, ky tu
+		// phan biet Hoa thuong
+		// khuyen khich la tieng Anh
+		// tranh: khong trung tu khoa trong java, khong bat dau bang so, ko chua
+		// ky tu dac biet
+
+		int age = 23;
+		
+		//xuat thong bao
+		System.out.println("tuổi" + age);
+		
+		// 2.Kieu du lieu trong java
+		// kiểu dữ liệu nguyên thủy ( primitive )
+		// ------------- tham chiếu int, long , byte, short, char - Kieu Nguyên 
+		char c = 64;
+		int x = 6;
+		long y = 4;
+		byte z = 5;
+		short ages = 27;
+		
+		//double, float - Kiểu Thực 
+		float floarValue = 6.5f;
+		double floatValue = 6.5d;
+		
+		// boolean
+		boolean sex = true;
+		
+		//kiểu dữ liệu tham chiếu:
+		// Aray, class, interface
+		
+		// kiểu dữ liệu chữ Hoa(Wrapper class)
+		// int = > Interger;
+		// long => Long;
+		// char => Character;
+		System.out.println(Integer.MAX_VALUE);
+		
+		// Nhập Thông Tin
+		Scanner scan = new Scanner(System.in);
+		// Nhập số nguyên từ bàn phím
+		//int a = scan.nextInt();
+		//double db = scan.nextDouble();
+		//String name = scan.nextLine();
+		
+		System.out.println("Nhap ten:");
+		String ten = scan.nextLine();
+		
+		System.out.println("Nhap tuoi:");
+		short tuoi = scan.nextShort();
+		//scan.nextLine();
+		System.out.println("Nhap dia chi:");
+		String diachi = scan.nextLine();
+		
+		System.out.println("Ten:"+ten+"\tToi:" +tuoi+" \tdia chi:"+diachi);
+		
+	}
+
+}

@@ -47,21 +47,26 @@ public class JsonWorking {
             //Reader reader = new FileReader(File_json);
             //InputStreamReader reader = new InputStreamReader(file, StandardCharsets.UTF_8);
             BufferedReader br = new BufferedReader(file) ;
+            
             String jsonCustomize = "[";
             
             String line;
+            int index=0;
             while ((line = br.readLine()) != null) {
                 // process the line.
-                line = line + ",";
-                jsonCustomize += line;
+                //line = line + ",";
+                //jsonCustomize += line;
+                Agency agency = gson.fromJson(line, new TypeToken<Agency>(){}.getType());
+                agencyList.add(agency);
+                
             }
-            jsonCustomize = jsonCustomize.substring(0, jsonCustomize.lastIndexOf(","));
-            jsonCustomize += "]";
+            //jsonCustomize = jsonCustomize.substring(0, jsonCustomize.lastIndexOf(","));
+            //jsonCustomize += "]";
+             
             
             
-            
-            agencyList = gson.fromJson(jsonCustomize, new TypeToken<ArrayList<Agency>>() {
-            }.getType());
+            //agencyList = gson.fromJson(jsonCustomize, new TypeToken<ArrayList<Agency>>() {
+            //}.getType());
             
             removeHtmlTags(agencyList);
             return agencyList;
