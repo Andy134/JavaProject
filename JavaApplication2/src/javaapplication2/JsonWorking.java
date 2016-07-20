@@ -32,7 +32,7 @@ import org.jsoup.nodes.Document;
  */
 public class JsonWorking {
 
-    private static final String File_json = "..\\JavaApplication2\\src\\data\\nhamoigioi_content.json";
+    private static final String File_json = "..\\JavaApplication2\\src\\data\\nhamoigioi.json";
 
     public ArrayList<Agency> JsontoJava() {
         //Gson gson = new GsonBuilder().create();
@@ -42,14 +42,9 @@ public class JsonWorking {
             //Reader reader = new InputStreamReader(JsonToJava.class.getResourceAsStream(File_json), "UTF-8")
             Gson gson = new Gson();
             FileReader file = new FileReader (File_json);
-            
-            
             //Reader reader = new FileReader(File_json);
             //InputStreamReader reader = new InputStreamReader(file, StandardCharsets.UTF_8);
             BufferedReader br = new BufferedReader(file) ;
-            
-            String jsonCustomize = "[";
-            
             String line;
             int index=0;
             while ((line = br.readLine()) != null) {
