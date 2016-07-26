@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 25, 2016, 3:30:08 PM
+    Author     : tuananh
+*/
+
+.validation-summary-valid {
+    display: none;
+}
+
+.field-validation-error {
+    display: none;
+}
+
+input.input-validation-error, 
+textarea.input-validation-error, 
+select.input-validation-error, 
+select.input-validation-error+div>button.selectpicker {
+    border: 1px solid #e80c4d;
+}
+
+.alert ul {
+    padding-left: 18px;
+}
+
+.margin-left-form-mega645 {
+    margin-left: 23px;
+}
+
+.btn-search-mega645 {
+    background-color:red;
+    color:white;
+    font-weight:bold;
+    font-family:Tahoma;
+}
+
+.margin-bottom-form-mega645 {
+    margin-bottom: 20px;
+}
+
+.media-heading p {
+    font-size: 12px
+}
+
+.role-result {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.porn-label span:first-child { 
+    margin-right: 4px;
+}
+
+table thead tr th.width-10 {
+    width: 10%;
+}
+
+table thead tr th.width-13 {
+    width: 13%;
+}

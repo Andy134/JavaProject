@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 25, 2016, 3:33:49 PM
+    Author     : tuananh
+*/
+
+/*--------------------------------------- Responsive ------------------------------------------*/
+
+body, .wrap {width:1280px; max-width:none;}
+
+footer {padding:0}
+footer .wrap {padding:25px 20px;}
+
+
+.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}
+
+.sub-pages .col-xs-12.col-md-2 , .inside-pages .navbar-header {width: 250px;}
+.sub-pages .col-xs-12.col-md-10  {width: 1000px;}
+
+.sub-pages .col-xs-12.col-md-2 h2 {font-size:25px;}
+
+.sub-mn-list {width:25%}
+.sub-mn-spotlight {width:75%}
+.sub-mn-spotlight .col-md-6 {
+    width: 50%;
+}
+
+.carousel-caption h2 {font-size:54px}
+.carousel-caption .descript-jackpot {font-size: 20px;}
+
+.navbar>.container-fluid .navbar-brand {margin-left:0}
+.inside-pages .navbar-collapse {float:left; width: 970px; padding-left:0;}
+
+.navbar-brand {padding:15px 15px 5px 15px; margin-left:0 !important}
+
+.navbar-collapse.collapse {display:block}
+.navbar-nav, .navbar-nav>li, .navbar-header {
+    float: left;
+}
+
+.navbar-right {
+    float: right!important;
+    margin-right: -15px; margin-bottom:0;
+}
+
+.navbar-toggle {
+    display: none;
+}
+	
+.main .wrap, .breadcrumb-box	.wrap {width:auto}
+.game-box {background:url('../images/bg-main.png') repeat-y center center;}
+.game-box-bg {background:url('../images/bg-main-2.png') repeat-x center top;}
+
+.game-result {float:left;width:63%;padding-left: 0;padding-right: 0;}
+
+.game-jackpot {width:37%;float:right;}
+.game-jackpot .row-ct-4 {width:auto}
+
+.tab-games {padding-bottom:2px; background:none}
+.tab-games .tab-content>.tab-pane {padding-left:0; padding-right:0}
+
+.video-result {padding:29px 30px 20px 0}
+.video-result {padding:20px 15px}
+
+.lotto-result {padding:30px 0 0}
+.lotto-result .more {margin-right:20px;}
+.lotto-result .role-result {margin: 10px 20px 15px 0}
+
+.row-ct-1 {background:#050830 url('../images/bg-agency.png') no-repeat center center; background-size:cover; padding:25px}
+.row-ct-1 .pull-left {font-size:24px; height:68px; width:62%;}
+.row-ct-1 .pull-right {margin-top:23px;}
+.ribbon {display:inline-block}
+
+.news-recently {margin:auto;padding: 0 15px;}
+.news-recently .col-md-2 {width:20%}
+.news-recently .row > .col-xs-12.col-md-2:last-child {display:block}
+
+.partner-vietlott {margin-bottom:80px}
+
+
+.inside-pages .container-fluid {padding-left:0; padding-right:0}
+.row-ct-1 .pull-left {font-size:25px; height:68px; width:62%;}
+
+.main-menu.navbar-nav {margin-left: 35px;margin-bottom: 0;}
+.main-menu.navbar-nav>li>a {font-size:16px; padding: 8px 14px;}
+
+.game-result .jackpot-win {}
+
+
+.main-menu .mn-play:hover .dropdown-menu, .main-menu .mn-win:hover .dropdown-menu, .main-menu .mn-agency:hover .dropdown-menu, .main-menu .mn-mission:hover .dropdown-menu, .main-menu .mn-news:hover .dropdown-menu, .main-menu .mn-about:hover .dropdown-menu {display:block;}
+	
+.main-menu.navbar-nav>li>a:focus, .main-menu.navbar-nav>li>a:hover, .main-menu.navbar-nav>.active>a:focus, .main-menu.navbar-nav>.active>a:hover {background:#c51922; color:#fff}
+
+.ico-switch, .ico-switch:before {display:none !important}

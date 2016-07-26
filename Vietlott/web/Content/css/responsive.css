@@ -1,0 +1,261 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 25, 2016, 3:34:35 PM
+    Author     : tuananh
+*/
+
+/*--------------------------------------- Responsive (MIN) ------------------------------------------*/
+@media (min-width: 1349px) {
+	.sub-pages .col-xs-12.col-md-2 , .inside-pages .navbar-header {width: 250px;}
+	.sub-pages .col-xs-12.col-md-10  {width: 1000px;}
+	
+	.sub-pages .col-xs-12.col-md-2 h2 {font-size:25px;}
+	 
+	.navbar>.container-fluid .navbar-brand {margin-left:0}
+	.inside-pages .navbar-collapse {float:left; width: 970px; padding-left:0;}
+}
+
+
+@media only screen and (min-width: 1200px) {	
+	.navbar-brand {/*padding:15px 15px 15px 0; */margin-left:0 !important}
+	
+	
+	.game-box {background:url('../images/bg-main.png') repeat-y center center;}
+	.game-box-bg {background:url('../images/bg-main-2.png') repeat-x center top;}
+	
+	.game-result {float:left;width:63%;padding-left: 0;padding-right: 0;}
+	
+	.game-jackpot {width:37%;float:right;}
+	.game-jackpot .row-ct-4 {width:auto}
+	
+	.tab-games {padding-bottom:2px; background:none}
+	.tab-games .tab-content>.tab-pane {padding-left:0; padding-right:0}
+	
+	.video-result {padding:29px 30px 20px 0}
+	.video-result {padding:20px 15px}
+	
+	.lotto-result {padding:30px 0 0}
+	.lotto-result .more {margin-right:20px;}
+	.lotto-result .role-result {margin: 10px 20px 15px 0}
+	
+	.row-ct-1 {background:#050830 url('../images/bg-agency.png') no-repeat center center; background-size:cover; padding:25px}
+	.row-ct-1 .pull-left {font-size:24px; height:68px; width:62%;}
+	.row-ct-1 .pull-right {margin-top:23px;}
+	.ribbon {display:inline-block}
+	
+	.news-recently {margin:auto;}
+	.news-recently .col-md-2 {width:20%}
+	.news-recently .row > .col-xs-12.col-md-2:last-child {display:block}
+	
+	.partner-vietlott {margin-bottom:80px}
+}
+
+
+@media only screen and (min-width: 1281px) {
+	.inside-pages .container-fluid {padding-left:0; padding-right:0}
+	.row-ct-1 .pull-left {font-size:23px; height:68px; width:62%;}
+	
+	.main-menu.navbar-nav {margin-left: 35px;}
+	.main-menu.navbar-nav>li>a {font-size:16px; padding: 8px 14px;}
+	
+	.game-result .jackpot-win {padding-left:0}
+}
+
+
+@media (min-width:1100px){
+	.main-menu .mn-play:hover .dropdown-menu, .main-menu .mn-win:hover .dropdown-menu, .main-menu .mn-agency:hover .dropdown-menu, .main-menu .mn-mission:hover .dropdown-menu, .main-menu .mn-news:hover .dropdown-menu, .main-menu .mn-about:hover .dropdown-menu {display:block;}
+	
+	.main-menu.navbar-nav>li>a:focus, .main-menu.navbar-nav>li>a:hover, .main-menu.navbar-nav>.active>a:focus, .main-menu.navbar-nav>.active>a:hover {background:#c51922; color:#fff}
+	
+	.ico-switch, .ico-switch:before {display:none !important}
+}
+
+
+/*--------------------------------------- Responsive (MAX) ------------------------------------------*/
+
+@media only screen and (max-width: 1280px) {
+	.inside-pages .wrap {max-width:none}
+	
+	.navbar-right.navbar-nav>li>a {font-size:14px}
+	.carousel-caption {left:15px;top:80px;}
+}
+
+
+
+@media (max-width:1200px){
+	.navbar-brand {padding:15px 15px 5px 15px}
+	
+	.inside-pages .navbar-header {width:18%;}
+	.inside-pages .navbar-collapse {width:82%}
+	
+	.sub-pages .col-xs-12.col-md-2, .ft-link-box, .ft-social li:first-child {display:none}
+	.sub-pages .col-xs-12.col-md-10 {width:100%}
+	
+	.sub-pages .news-recently {margin:auto}
+}
+
+@media (max-width:1100px){
+	.container-fluid {padding-left:0; padding-right:0}
+	.navbar-toggle {display:block;margin-right: 5px;}	
+	.navbar-collapse.collapse {display:none !important}
+	.navbar-collapse.collapse.in {display:block !important;}
+	.navbar-header {float:none; width:auto !important;}
+	.navbar-default .navbar-collapse {border:none}
+	
+	
+	.main-menu.navbar-nav {border-radius:0;margin-left: 0 !important;margin-top:0;margin-bottom: 0;margin-right: 0;}
+	.navbar>.container-fluid .navbar-brand {margin-left:0}	
+	
+	
+	.main-menu.navbar-nav>li>a {padding: 10px 15px;border-right: 0;border-radius: 0;display: inline-block;}
+	.main-menu, .navbar-right, .main-menu > li {float:none !important}
+	.main-menu .dropdown {border-top: 1px solid rgba(197, 25, 34, 0.35);clear: both;}
+	.main-menu .dropdown .dropdown-menu {width:100%;position: static;border-radius: 0;float: none;box-shadow: none;}
+	.main-menu .dropdown .dropdown-menu:before {display:none}
+	
+	.main-menu.navbar-nav>.open>a.dropdown-toggle, .main-menu.navbar-nav>.active>a {background:none}
+	
+	.sub-mn-spotlight.col-xs-12.col-md-9 {display:none}
+	.sub-mn-list {background:#A7232A;width: 100%;padding: 5px 15px 10px;}
+	.sub-mn-list h4 a {color:#FB888E}
+	.sub-mn-list li a {color:#fff;padding: 5px 0;}
+	
+	.navbar-right.navbar-nav {background: #010534;margin-top:0;margin: 0;}
+	.navbar-right.navbar-nav li {border-bottom:1px solid;float: none;}
+	.navbar-right.navbar-nav>li>a {padding: 8px 15px;color: #999;}
+	.navbar-right.navbar-nav>li>a:hover, .navbar-right.navbar-nav>li>a:focus {color:#fff !important}
+	.mn-search a.dropdown-toggle {display:none}
+	.main-menu .mn-search .dropdown-menu form .input-group, .mn-search .dropdown-menu {display:block;}
+	
+	 .mn-search .dropdown-menu {padding-bottom:15px !important; background:#ED1D27}
+	.main-menu .mn-search .dropdown-menu form input {width:100%; max-width:100%; border-radius:50px}
+	
+	.container-fluid>.navbar-collapse {margin-right: 0;margin-left: 0;padding-left: 0;padding-right: 0;width: auto;float: none;}
+	
+	.signin {background:none!important;padding: 10px 15px!important;color:#999 !important;font-weight:normal;}
+	
+	.carousel-caption .value-money {font-size: 3vw;}
+	/*.navbar-right.navbar-nav .switch-mobile {display:block}*/
+	.navbar-right.navbar-nav li a i.ico {display:inline-block;margin-right: 6px;width: 16px;text-align: center;}
+	
+}
+
+@media only screen and (max-width: 990px) {
+	
+	.countdown_timer_games {}
+	
+	.carousel-caption {top:60px}
+	.carousel-caption h2 {margin-bottom:0}
+	.carousel-caption .countdown-box .title {margin-top:5px;}
+	.countdown-box .countdown .box-number {margin-top:3px}
+	.countdown-box .countdown span {font-size: 14px;margin-top:0;}
+	
+	.news-recently .col-xs-12.col-md-2 {width:50%; padding:0 10px;}
+	.news-recently .col-xs-12.col-md-2 .news-detail {}
+	
+	.sub-pages .news-recently {margin:0;}
+	.sub-pages .news-recently > .row {margin-left: -7px;margin-right: -7px;}
+	.sub-pages .col-xs-12.col-md-4 {width:33.33333333%; padding-right:7px; padding-left:7px}
+	
+	.sub-pages .col-xs-12.col-md-6 {width:50%}
+	
+	.video-hot.col-md-8 {padding-right:7px; padding-left:7px;}
+	
+	.video-hot-suggest {width:100% !important; height:auto !important; margin-top:20px; padding:0 !important}
+	.video-hot-suggest .media {width:33.33333333%; float:left; margin-top:0; padding-left:7px; padding-right:7px}
+	.video-hot-suggest .media h4 {margin-bottom:3px; padding-top:5px}
+	.video-hot-suggest .thumb {float:none !important}
+	.video-hot-suggest .thumb, .video-hot-suggest .thumb img {width:100% !important; padding-bottom: 65%;}
+	
+	.video-hot-suggest .thumb i.ico-video:before {width:70px; height:70px}
+	.video-hot-suggest .thumb i.ico-video:after {border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 12px solid rgb(255, 255, 255);}
+	
+	.breadcrumb {}
+	.breadcrumb a {}
+	.breadcrumb > .active, .breadcrumb>li+li:before {}
+	
+	.sub-pages h3 {margin-top:20px; margin-bottom:20px}
+	
+	.btn-fixed {top:inherit;bottom: 80px;right:15px;}
+	.btn-fixed a {background: rgb(237, 29, 39) !important;color:#fff;width: 58px;height: 58px;border-radius: 50%;line-height: 63px;text-align: center;font-size: 26px;}
+	.btn-fixed a i {display: inline-block;}
+	
+	.box-result-detail .logo-jackpot {width:auto; position:static; text-align:center; margin-top:5px}
+	.box-result-detail .time-result {padding:5px 0}
+	
+	footer ul.ft-social li:last-child {margin-left:0; display:block}
+}
+@media only screen and (max-width: 768px) {
+	
+	.container-fluid>.navbar-header {margin-left:0; margin-right:0}
+	
+	.navbar>.container-fluid .navbar-brand {}
+	
+	.game-result .jackpot-win {float:none;margin-right:0;padding-right:0;text-align:center;padding-left: 0;}
+	
+	.game-result .jackpot-win h2 {font-size:10vw; line-height:normal}
+	.value-money {font-size:5vw;}
+	.game-result .jackpot-win:before {display:none}
+	
+	.game-result .countdown-box {text-align:center; margin-bottom:20px}
+	.countdown-box .title {margin-top:5px; margin-bottom:5px; position:relative}
+	.tab-games .countdown-box .title span {background:#fff; position:relative; padding:0 15px;}
+	.tab-games .countdown-box .title:before {content:"";height:1px;left:0;right:0;margin:auto;background:#ddd;position: absolute;top: 12px;}
+	
+	.tab-games .nav-tabs {margin-top:0;padding-top:20px;background:#050830;text-align:center;padding-left: 15px;}
+	.tab-games .nav-tabs li {margin-bottom: 0;}
+	
+	.banner-inside .banner-game h2 {font-size:7vw}
+	.banner-inside .banner-game .descript {font-size:2.5vw}
+	.banner-inside .banner-game .countdown-box {margin-top:-15px;}
+	.banner-inside .banner-game .countdown-box .countdown .box-number {font-size:3vw}
+	
+	.btn-switch-view {display:block}
+	
+}
+
+@media only screen and (max-width: 640px) {
+	.row-ct-1 .pull-left {font-size:3.8vw}
+	.row-ct-1 .pull-right {min-width:115px}
+	.row-ct-1 .pull-right a.btn-red {font-size:16px;}
+	
+	.news-recently h3 {margin-bottom:10px}
+	.news-page .col-xs-12.col-md-6 .thumb {width:88px; margin-right:5px}
+	
+	.partner-vietlott { margin-top:60px}
+	.partner-vietlott:before {top:-30px}
+	
+	.news-recently .col-xs-12.col-md-2 {min-height:360px}
+	.sub-pages .news-recently h4 {font-size:16px}
+	
+	.box-result-detail .result-number li {margin: 2px 1px;}
+	.box-result-detail .result-number li.arrow-result {display:none}
+	
+	.banner-inside .banner-game h2 {font-size:10vw}
+	.banner-inside .banner-game .descript {font-size:3.5vw}
+	.banner-inside .banner-game .countdown-box .countdown .box-number {font-size:26px}
+	.banner-inside .banner-game .jackpot-win {float:none; text-align:center}
+	.banner-inside .banner-game .label-game {text-align:center}
+	.banner-inside .banner-game .countdown-box {margin-top:0; text-align:center}
+	
+	.filer-result label {display:block}
+	.filer-result .form-group {margin-right:0}
+	
+}
+
+@media only screen and (max-width: 480px) {
+	.game-jackpot .row-ct-4 {width:100%}
+	.sub-pages .news-recently > .row {margin-left:0; margin-right:0;}
+	.sub-pages .col-xs-12.col-md-4 {width:100%; padding-right:0; padding-left:0; height:auto !important; margin-bottom:15px;}
+	
+	.news-page .col-xs-12.col-md-6:nth-child(odd) {padding-right:10px}
+	.news-page .col-xs-12.col-md-6:nth-child(even) {padding-left:10px}
+	.news-page .col-xs-12.col-md-6 .row {margin-left:-8px; margin-right:-8px}
+	.news-page .col-xs-12.col-md-6 .thumb {width:100%; margin-right:0; padding-right:0; margin-bottom:8px; float:none !important}
+	
+	.video-hot-suggest .media {width:100%; padding-left:0; padding-right:0; margin-bottom:15px}
+}
