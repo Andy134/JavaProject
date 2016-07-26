@@ -27,7 +27,7 @@ public class MTruyentranh8Crawl {
         //PageController pageController = new PageController();
         //pageController.getLastPage();
         ComicController comicController = new ComicController();
-        //comicController.AddNewAndUpdateAllComic();
-        comicController.UpdateDetailComic();
+        comicController.AddNewAndUpdateAllComic();
+        //comicController.UpdateDetailComic();
     }
 }
