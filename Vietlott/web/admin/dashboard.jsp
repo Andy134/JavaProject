@@ -8,11 +8,19 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <%
-    if ((session.getAttribute("user_name") == null) || (session.getAttribute("user_name") == "")) {
+    if (((Integer) session.getAttribute("user_id") <= 0)) {
 %>       
 <p>You are not login </p><a href="index.jsp">Please login</a>
-<%}
+<%}%>
+<%
+    else if (!session.getAttribute("user_role").equals("admin")) {
+ %>
+ <p>You are not authorized to access this page </p>
+ <a href="javascript:history.back()">go back</a>
+ <%
+    } else{
 %>
+
 
 <html lang="en">
     <head>
@@ -475,3 +483,4 @@
     </body>
 
 </html>
+<%}%>

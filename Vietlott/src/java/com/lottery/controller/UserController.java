@@ -5,13 +5,11 @@
  */
 package com.lottery.controller;
 
-import com.lottery.model.User;
 import com.lottery.service.UserService;
 import com.lottery.service.UserServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,11 +18,17 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author tuananh
+ * @author TuanAnh
  */
-@WebServlet(name = "LoginController", urlPatterns = {"/admin/LoginController"})
-public class LoginController extends HttpServlet {
-
+@WebServlet(name = "UserController", urlPatterns = {"/admin/UserController"})
+public class UserController extends HttpServlet {
+    private static final String list_user = "/admin/ListUsers.jsp";
+    private static final String insert_or_edit = "/admin/User.jsp";
+    private UserService userService;
+    public UserController(){
+        super();
+        userService = new UserServiceImpl(null);
+    }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,7 +40,7 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -51,7 +55,16 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String forward="";
+        String action= request.getParameter("action");
+        if(action != null){
+            if(action.equalsIgnoreCase("listUser")){
+                forward = list_user;
+                request.setAttribute("users", userService.findAll());
+            }
+        }
+        RequestDispatcher view = request.getRequestDispatcher(forward);
+        view.forward(request, response);
     }
 
     /**
@@ -65,24 +78,6 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserService us = new UserServiceImpl(null);
-        List<User> listUser = us.findAll();
-
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            listUser.stream().forEach((user) -> {
-                out.println(user.getFirstName());
-            });
-            out.println("</body>");
-            out.println("</html>");
-        }
         processRequest(request, response);
     }
 

@@ -9,7 +9,7 @@
 <%@page import="com.lottery.service.UserServiceImpl"%>
 <%@page import="com.lottery.service.UserService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%
     String email = request.getParameter("email");
     String password = request.getParameter("password");
@@ -21,9 +21,11 @@
         session.setAttribute("user_name", user.getFirstName()+" "+user.getLastName());
         session.setAttribute("user_role", user.getUserRole());
         session.setAttribute("user_id", user.getUserId());
-        response.sendRedirect("dashboard.jsp");
+        
+        response.sendRedirect("users.jsp");
     }
     else{
         out.println("Email or Password not found");
     }
 %>
+
