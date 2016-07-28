@@ -21,4 +21,6 @@ public interface UserDao extends BaseDAO{
     public ResultSet find(int start, int limit);
     public ResultSet findById(int id);
     public ResultSet findByEmail(String email);
+    // Check Email/ Password
+    public ResultSet checkUserLogin(String Email, String password);
 }

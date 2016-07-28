@@ -16,6 +16,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,7 +36,7 @@ public class ConnectionPoolImpl implements ConnectionPool {
     private Stack<Connection> pool;
 
     public ConnectionPoolImpl() {
-        Properties p = new Properties();
+        //Properties p = new Properties();
         InputStream input = null;
         try {
             
@@ -44,9 +46,9 @@ public class ConnectionPoolImpl implements ConnectionPool {
             String pUSER = "root";
             String pPASSWORD= "112233445566";
             
-            this.username = p.getProperty(pURL);
-            this.userpass = p.getProperty(pUSER);
-            this.url = p.getProperty(pPASSWORD);
+            this.username = pUSER;
+            this.userpass = pPASSWORD;
+            this.url = pURL;
             // Thong tin chinh dieu khien
             this.driver = "com.mysql.jdbc.Driver";
             // Khoi tao Stack lưu cac connection
@@ -62,7 +64,7 @@ public class ConnectionPoolImpl implements ConnectionPool {
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        } 
     }
 
     @Override

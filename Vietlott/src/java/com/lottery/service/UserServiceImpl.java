@@ -20,6 +20,24 @@ public class UserServiceImpl implements UserService{
         this.userTranfer = new UserTransfer(cp); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * @return *************/
+    @Override
+    public ConnectionPool getConnectionPool() {
+        return this.userTranfer.getConnectionPool(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void releaseConnection() {
+        this.userTranfer.releaseConnection(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void refreshConnectionPool() {
+        this.userTranfer.refreshConnectionPool(); //To change body of generated methods, choose Tools | Templates.
+    }
+    /***************/
+    
     @Override
     public boolean addUser(User user) {
         return userTranfer.addUser(user);//To change body of generated methods, choose Tools | Templates.
@@ -54,21 +72,11 @@ public class UserServiceImpl implements UserService{
     public User findByEmail(String email) {
         return this.userTranfer.findByEmail(email); //To change body of generated methods, choose Tools | Templates.
     }
-    /**
-     * @return *************/
-    @Override
-    public ConnectionPool getConnectionPool() {
-        return this.userTranfer.getConnectionPool(); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
-    public void releaseConnection() {
-        this.userTranfer.releaseConnection(); //To change body of generated methods, choose Tools | Templates.
+    public User checkUserLogin(String email, String password) {
+        return this.userTranfer.checkUserLogin(email, password); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public void refreshConnectionPool() {
-        this.userTranfer.refreshConnectionPool(); //To change body of generated methods, choose Tools | Templates.
-    }
-    /***************/
+    
+   
 }

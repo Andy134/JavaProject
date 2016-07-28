@@ -167,4 +167,27 @@ public class UserTransfer {
         }
         return user;
     }
+    
+    public User checkUserLogin(String email, String password) {
+        User user = null;
+        ResultSet rs = this.userDao.checkUserLogin(email, password);
+        try {
+            if (rs != null && rs.next()) {
+                user = new User();
+                user.setUserId(rs.getInt(1));
+                user.setFirstName(rs.getString(2));
+                user.setLastName(rs.getString(3));
+                user.setGender(rs.getInt(4));
+                user.setEmail(rs.getString(5));
+                user.setPassword(rs.getString(6));
+                user.setUserRole(rs.getString(7));
+                user.setActiveDate(rs.getDate(8));
+                user.setAvatar(rs.getString(9));
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserTransfer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
+    }
 }

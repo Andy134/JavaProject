@@ -10,6 +10,8 @@ import com.lottery.utils.ConnectionPool;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -126,6 +128,21 @@ public class UserDaoImpl extends BaseDAOImpl implements UserDao {
             e.printStackTrace();
         }
         return null; //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ResultSet checkUserLogin(String email, String password) {
+        try {
+            String sql = "SELECT * FROM lottery_db.users WHERE Email = ? AND Password = ?";
+            PreparedStatement pre = this.connection.prepareStatement(sql);
+            pre.setString(1, email);
+            pre.setString(2, password);
+            return this.get(pre);
+        } catch (SQLException ex) { 
+            Logger.getLogger(UserDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
 }

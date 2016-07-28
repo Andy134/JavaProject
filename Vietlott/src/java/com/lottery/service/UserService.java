@@ -27,6 +27,6 @@ public interface UserService extends BaseService{
     public User findById(int id);
     // lay post theo email
     public User findByEmail(String email);
-    
-    
+    // Check ton tai user and password
+    public User checkUserLogin(String email, String password);
 }

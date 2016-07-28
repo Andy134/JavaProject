@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Maxtoto - Xổ số tự chọn</title>
         <link type="text/css" rel="stylesheet" href="../Content/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="../Content/css/admin/registrator.css">
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -17,9 +17,9 @@
     </head>
     <body>
         <div class="wrapper">
-            <form class="form-signin" role="form" method="post" action="LoginController">       
-                <h2 class="form-signin-heading">Please login</h2>
-                <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus=""/>
+            <form class="form-signin" role="form" method="post" action="login.jsp">       
+                <h2 class="form-signin-heading">Please Login</h2>
+                <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus=""/>
                 <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
                 <!--<label class="checkbox">
                     <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
