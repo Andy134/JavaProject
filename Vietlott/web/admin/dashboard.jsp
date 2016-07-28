@@ -10,7 +10,7 @@
 <%
     if ((session.getAttribute("user_name") == null) || (session.getAttribute("user_name") == "")) {
 %>       
-<p>You are not login</p><br/><a href="index.jsp">Please login</a>
+<p>You are not login </p><a href="index.jsp">Please login</a>
 <%}
 %>
 
