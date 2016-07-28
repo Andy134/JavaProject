@@ -37,25 +37,22 @@ public class ConnectionPoolImpl implements ConnectionPool {
         Properties p = new Properties();
         InputStream input = null;
         try {
-            input = new FileInputStream("..\\Vietlott\\src\\database_info.properties");
-            p.load(input);
             
+            //p.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("database_info.properties"));
             //p.load(Thread.currentThread().getContextClassLoader().getResourceAsStream(""));
-            this.username = p.getProperty("USER");
-            this.userpass = p.getProperty("PASSWORD");
-            this.url = p.getProperty("URL");
+            String pURL = "jdbc:mysql://localhost:3306/lottery_db?useUnicode=true&characterEncoding=utf8&useSSL=false";
+            String pUSER = "root";
+            String pPASSWORD= "112233445566";
+            
+            this.username = p.getProperty(pURL);
+            this.userpass = p.getProperty(pUSER);
+            this.url = p.getProperty(pPASSWORD);
             // Thong tin chinh dieu khien
             this.driver = "com.mysql.jdbc.Driver";
             // Khoi tao Stack lưu cac connection
             this.pool = new Stack<Connection>();
             // load JDBC driver
             Class.forName(this.driver).newInstance();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (InstantiationException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

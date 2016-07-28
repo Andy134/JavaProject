@@ -279,6 +279,8 @@ public class ExcelWoring {
             row.createCell(cellIndex++).setCellValue("Email");
             row.createCell(cellIndex++).setCellValue("Website");
             row.createCell(cellIndex++).setCellValue("Nội dung tự giới thiệu");
+            
+            row.createCell(cellIndex++).setCellValue("Khu vực môi giới");
         rowIndex = 1;
         for (Agency agency : agencyList) {
             des = agency.getDescription();
@@ -348,6 +350,7 @@ public class ExcelWoring {
             row.createCell(cellIndex++).setCellValue(email);
             row.createCell(cellIndex++).setCellValue(website);
             row.createCell(cellIndex++).setCellValue(des);
+            row.createCell(cellIndex++).setCellValue(location);
         }
         //write this workbook in excel file.
         try {

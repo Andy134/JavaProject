@@ -24,6 +24,7 @@ public class UserDaoImpl extends BaseDAOImpl implements UserDao {
     @Override
     public boolean addUser(User user) {
         try {
+            
             String sql = "INSERT INTO users("
                     + " User_Id, First_Name, Last_Name, Gender, "
                     + " Email, Password, User_Role, "
