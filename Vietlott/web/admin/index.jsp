@@ -1,5 +1,5 @@
 <%-- 
-    Document   : index
+    Document   : index2
     Created on : Jul 26, 2016, 2:10:11 PM
     Author     : tuananh
 --%>
