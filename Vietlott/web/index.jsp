@@ -161,11 +161,11 @@
                                         <div class="row">
                                             <div class="col-xs-12 col-md-6">
                                                 <div class="media">
-                                                    <div class="media-left">
-                                                        <a href = "/vi/choi/mega-6-45/dieu-kien-du-thuong">
-                                                            <img src="Content/images/space.gif" class="media-object" style="background-image: url('http://static.vietlott.vn/uploads/public/7472616E74686973756F6E67Images/MMM.png'" alt="">
-                                                        </a>
-                                                    </div>
+
+
+                                                    <img src="Content/images/space.gif" class="media-object" style="background-image: url('http://static.vietlott.vn/uploads/public/7472616E74686973756F6E67Images/MMM.png'" alt="">
+
+
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
                                                             <a href = "/vi/choi/mega-6-45/dieu-kien-du-thuong"> Điều kiện dự thưởng</a>
@@ -346,7 +346,7 @@
                                     </div>
                                 </div>
                             </li>
-                            
+
                             <li class="dropdown mn-search">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-search"></i></a>
                                 <div class="dropdown-menu">
@@ -585,8 +585,8 @@
                                 </div>
                                 <p class="role-result">
                                     <span>
-                                      Thời hạn lĩnh thưởng của vé trúng thưởng: là 60 (sáu mươi) ngày, kể từ ngày xác định kết quả trúng thưởng hoặc kể từ ngày hết hạn lưu hành của vé xổ số tự chọn số điện toán (nếu có). Quá thời hạn trên, các vé trúng thưởng không còn giá trị lĩnh thưởng.  
-                                        
+                                        Thời hạn lĩnh thưởng của vé trúng thưởng: là 60 (sáu mươi) ngày, kể từ ngày xác định kết quả trúng thưởng hoặc kể từ ngày hết hạn lưu hành của vé xổ số tự chọn số điện toán (nếu có). Quá thời hạn trên, các vé trúng thưởng không còn giá trị lĩnh thưởng.  
+
                                     </span>
                                 </p>
                             </div>
@@ -680,7 +680,7 @@
                                 Vietlott tham gia chương trình hiến máu tình nguyện năm...                                    </a>
                         </h4>
                         <p>
-                           Hưởng ứng lời kêu gọi của Đoàn thanh niên Bộ Tài chính, thiết thực lập thành tích chào mừng kỷ ...                               </p>
+                            Hưởng ứng lời kêu gọi của Đoàn thanh niên Bộ Tài chính, thiết thực lập thành tích chào mừng kỷ ...                               </p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-2">
@@ -702,7 +702,7 @@
                                 Vietlott tham dự hội nghị sơ kết 6 tháng đầu năm của Hộ...                                       </a>
                         </h4>
                         <p>
-                           Từ ngày 22 -24/7, Hội đồng Xổ số Kiến thiết miền Trung đã tổ chức hội nghị sơ kết công tác kinh...</p>
+                            Từ ngày 22 -24/7, Hội đồng Xổ số Kiến thiết miền Trung đã tổ chức hội nghị sơ kết công tác kinh...</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-2">
@@ -724,7 +724,7 @@
                                 Lời khuyên cho người chơi                                       </a>
                         </h4>
                         <p>
-                           Một số mẹo nhỏ giúp người chơi tự kiểm soát việc tham gia các trò chơi có thưởng.</p>
+                            Một số mẹo nhỏ giúp người chơi tự kiểm soát việc tham gia các trò chơi có thưởng.</p>
                     </div>
                 </div>
             </div>
@@ -814,14 +814,14 @@
             </div>
             <div class="ft-copyright">
                 © 2016, Công ty Xổ Số Điện Toán Việt Nam. <br/>
-Tầng 15, Tòa nhà CornerStone, 16 Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội
+                Tầng 15, Tòa nhà CornerStone, 16 Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội
             </div>
         </div>
     </footer><!-- /.FOOTER -->
     <div class="btn-switch-view">
         <a href="#" id="change_vesion">
             <i class="icon-desktop"></i>  Phiên bản đầy đủ
-    
+
         </a>
     </div>
 
