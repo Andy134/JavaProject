@@ -62,7 +62,24 @@ public class UserController extends HttpServlet {
                 forward = list_user;
                 request.setAttribute("users", userService.findAll());
             }
+            else if(action.equalsIgnoreCase("insert")){
+                request.setAttribute("user_id",0);
+                forward=insert_or_edit;
+            }
+            else if(action.equalsIgnoreCase("edit")){
+                forward=insert_or_edit;
+                String user_id = request.getParameter("user_id");
+                int userId = Integer.parseInt(request.getParameter("user_id"));
+                request.setAttribute("user", userService.findById(userId));
+            }
+            else if(action.equalsIgnoreCase("delete")){
+                forward=list_user;
+                int userId = Integer.parseInt(request.getParameter("user_id"));
+                userService.delUser(userService.findById(userId));
+                request.setAttribute("users", userService.findAll());
+            }
         }
+        
         RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
     }
