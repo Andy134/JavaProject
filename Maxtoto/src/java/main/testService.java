@@ -26,17 +26,19 @@ public class testService {
     public static void main(String[] args) {
         UserService us = new UserServiceImpl(null);
         User user = new User();
-        user.setFirstName("Quoc Viet");
-        user.setLastName("Nguyen");
+        
+        user.setFirstName("test1");
+        user.setLastName("test");
         user.setGender(1);
-        user.setEmail("quocviet@gmail.com");
-        user.setPassword("hello");
+        user.setEmail("test@gmail.com");
+        user.setPassword("123");
         user.setActiveDate(new Date());
-        user.setUserRole("admin");
+        user.setUserRole("user");
         us.addUser(user);
+        
         List<User> listUser = us.findAll();
         for (User item : listUser) {
-            System.out.println(user.getFirstName());
+            System.out.println(item.getFirstName());
         }
         
     }

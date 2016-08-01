@@ -45,7 +45,7 @@
                                 <h4 class="title">Add/ Edit Profile</h4>
                             </div>
                             <div class="content">
-                                <form action="UserController" method="Post" name="formUser" role="form" enctype="mul">
+                                <form action="UserController" method="Post" name="formUser" role="form">
                                     <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
@@ -61,12 +61,22 @@
                                             </div>
                                             <span style="color: red;font-size: small"><c:out value="${email_error}" /></span>  
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Password</label>
                                                 <input type="password" name="password" class="form-control" placeholder="Email" value="<c:out value="${user.password}"/>">
                                             </div>
                                             <span style="color: red;font-size: small"><c:out value="${password_error}" /></span>  
+                                        </div> 
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Gender</label>
+                                                <select class="form-control" name="user_gender"/>">
+                                                <option ${user.userRole='admin'?'selected':''} value="0">Male</option>
+                                                <option ${user.userRole='user'?'selected':''} value="1">Female</option>
+                                                </select>
+                                            </div>
+                                            
                                         </div> 
                                         
                                     </div>

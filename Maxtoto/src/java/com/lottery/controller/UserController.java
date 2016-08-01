@@ -108,6 +108,8 @@ public class UserController extends HttpServlet {
         String lastName = request.getParameter("last_name").replace("'", "''");
         String email = request.getParameter("email");
         String password = request.getParameter("password").replace("'", "''");
+        int gender = Integer.parseInt(request.getParameter("user_gender"));
+        String userRole = request.getParameter("user_role");
         if (firstName.equalsIgnoreCase("") || firstName == null) {
             isError = true;
             request.setAttribute("first_name_error", "Firstname can not be empty");
@@ -135,19 +137,22 @@ public class UserController extends HttpServlet {
             user.setPassword(password);
             user.setEmail(email);
             user.setPassword(password);
+            user.setGender(gender);
             Date now = new Date();
             user.setActiveDate(now);
-
+            user.setUserRole(userRole);
             String userId = request.getParameter("user_id");
             if (userId == null || userId.equalsIgnoreCase("")) {
+                
                 userService.addUser(user);
             } else if (userService.findById(Integer.parseInt(userId)) != null) {
+                user.setUserId(Integer.parseInt(userId));
                 userService.editUser(user);
             } else {
                 System.out.print("Can not found User");
             }
 
-            response.sendRedirect("users");
+            response.sendRedirect("users.jsp");
         } else {
             request.setAttribute("user", user);
             RequestDispatcher view = request.getRequestDispatcher(insert_or_edit);
