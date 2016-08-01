@@ -226,7 +226,7 @@
                                 <a href="#" class="ico-switch"></a><div class="dropdown-menu">
                                     <div class="sub-mn-list col-xs-12 col-md-3">
                                         <h4>
-                                            <a href="/vi/trung-thuong/ket-qua-trung-thuong">Káº¿t quáº£ trÃºng thÆ°á»Ÿng</a>
+                                            <a href="/vi/trung-thuong/ket-qua-trung-thuong">Kết quả trúng thưởng</a>
                                         </h4>
                                         <ul>
                                             <li>
@@ -235,56 +235,56 @@
                                             </li>
                                         </ul>
                                         <h4>
-                                            <a href="/vi/trung-thuong/quay-so-mo-thuong">Quay sá»‘ má»Ÿ thÆ°á»Ÿng</a>
+                                            <a href="/vi/trung-thuong/quay-so-mo-thuong">Quay số mở thưởng</a>
                                         </h4>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/quay-so-mo-thuong/tong-quan">
-                                                    <i class="icon-arrow-right"></i> Tá»•ng quan</a>
+                                                    <i class="icon-arrow-right"></i> Tổng quan</a>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/quay-so-mo-thuong/xem-truc-tuyen">
-                                                    <i class="icon-arrow-right"></i> Xem trá»±c tuyáº¿n</a>
+                                                    <i class="icon-arrow-right"></i> Xem trực tuyến</a>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/quay-so-mo-thuong/quy-trinh-qsmt">
-                                                    <i class="icon-arrow-right"></i> Quy trÃ¬nh Quay sá»‘ má»Ÿ thÆ°á»Ÿng</a>
+                                                    <i class="icon-arrow-right"></i> Quy trình quay số mở thưởng</a>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/quay-so-mo-thuong/dang-ky-tham-gia-qsmt">
-                                                    <i class="icon-arrow-right"></i> ÄÄƒng kÃ½ tham gia QSMT
+                                                    <i class="icon-arrow-right"></i> Đăng ký tham gia QSMT
                                                 </a>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/quay-so-mo-thuong/the-le-quay-so-mo-thuong">
-                                                    <i class="icon-arrow-right"></i> Thá»ƒ lá»‡ quay sá»‘ má»Ÿ thÆ°á»Ÿng
+                                                    <i class="icon-arrow-right"></i> Thể lệ quay số mở thưởng
                                                 </a>
                                             </li>
                                         </ul>
-                                        <h4><a href="/vi/trung-thuong/linh-thuong">LÄ©nh thÆ°á»Ÿng</a></h4>
+                                        <h4><a href="/vi/trung-thuong/linh-thuong">Lĩnh Thưởng</a></h4>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/linh-thuong/quy-dinh-linh-thuong">
-                                                    <i class="icon-arrow-right"></i> Quy Ä‘á»‹nh lÄ©nh thÆ°á»Ÿng</a>
+                                                    <i class="icon-arrow-right"></i> Quy định lĩnh thưởng</a>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
                                                 <a href="/vi/trung-thuong/linh-thuong/ve-rach-ve-hu-hong">
-                                                    <i class="icon-arrow-right"></i> Äiá»u kiá»‡n vÃ© trÃºng thÆ°á»Ÿng
+                                                    <i class="icon-arrow-right"></i> Điều kiện vé trúng thưởng
                                                 </a>
                                             </li>
                                         </ul>
                                         <h4>
-                                            <a href="/vi/trung-thuong/thu-vien-trung-thuong">ThÆ° viá»‡n quay sá»‘ má»Ÿ thÆ°á»Ÿng</a>
+                                            <a href="/vi/trung-thuong/thu-vien-trung-thuong">Thư viện quay số mở thưởng</a>
                                         </h4>
                                     </div>
                                     <div class="sub-mn-spotlight col-xs-12 col-md-9">
@@ -294,9 +294,9 @@
                                                     <div class="media-left">
                                                         <a href = "/vi/trung-thuong/ket-qua-trung-thuong">
                                                             <img src="Content/images/space.gif" class="media-object" style="background-image: url('http://static.vietlott.vn/uploads/public/7472616E74686973756F6E67Images/2016/Trung%20thuong/lottery.jpg'" alt=""></a></div><div class="media-body"><h4 class="media-heading">
-                                                            <a href = "/vi/trung-thuong/ket-qua-trung-thuong"> Káº¿t quáº£ trÃºng thÆ°á»Ÿng</a>
+                                                            <a href = "/vi/trung-thuong/ket-qua-trung-thuong"> Kết quả trúng thưởng</a>
                                                         </h4>
-                                                        <p>Káº¿t quáº£ quay sá»‘ má»Ÿ thÆ°á»Ÿng cá»§a trÃ² chÆ¡i Mega 6/45</p>
+                                                        <p>Kết quả quay số mở thưởng của trò chơi Mega 6/45</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -309,9 +309,9 @@
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <a href = "/vi/trung-thuong/quay-so-mo-thuong"> Quay sá»‘ má»Ÿ thÆ°á»Ÿng</a>
+                                                            <a href = "/vi/trung-thuong/quay-so-mo-thuong"> Quay số mở thưởng</a>
                                                         </h4>
-                                                        <p>Quy trÃ¬nh quay sá»‘ má»Ÿ thÆ°á»Ÿng, cÃ¡ch thá»©c tham dá»± vÃ  cÃ¡c video quay sá»‘ má»Ÿ thÆ°á»Ÿng</p>
+                                                        <p>Quy trình quay số mở thưởng, cách thức tham dự và các video quay số mở thưởng</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -323,9 +323,9 @@
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <a href = "/vi/trung-thuong/linh-thuong"> LÄ©nh thÆ°á»Ÿng</a>
+                                                            <a href = "/vi/trung-thuong/linh-thuong"> Lĩnh thưởng</a>
                                                         </h4>
-                                                        <p>CÃ¡c quy Ä‘á»‹nh liÃªn quan Ä‘áº¿n lÄ©nh thÆ°á»Ÿng</p>
+                                                        <p>Các quy định liên quan đến lĩnh thưởng</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -336,9 +336,9 @@
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <a href = "/vi/trung-thuong/thu-vien-trung-thuong"> ThÆ° viá»‡n quay sá»‘ má»Ÿ thÆ°á»Ÿng</a>
+                                                            <a href = "/vi/trung-thuong/thu-vien-trung-thuong"> Quay số mở thưởng</a>
                                                         </h4>
-                                                        <p>Cáº©m nang dÃ nh cho ngÆ°á»i trÃºng thÆ°á»Ÿng vÃ  cÃ¡c cÃ¢u chuyá»‡n trÃºng thÆ°á»Ÿng</p>
+                                                        <p>Quy trình quay số mở thưởng, cách thức tham dự và các video quay số mở thưởng</p>
                                                     </div>
                                                 </div>
                                             </div>
