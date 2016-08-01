@@ -163,7 +163,7 @@
                                                 <div class="media">
 
 
-                                                    <img src="Content/images/space.gif" class="media-object" style="background-image: url('http://static.vietlott.vn/uploads/public/7472616E74686973756F6E67Images/MMM.png'" alt="">
+                                                    <img src="Content/images/space.gif" class="media-object" style="background-image: url('Content/images/MMM.png'" alt="">
 
 
                                                     <div class="media-body">
