@@ -5,6 +5,7 @@
  */
 package com.lottery.controller;
 
+import com.lottery.model.User;
 import com.lottery.service.UserService;
 import com.lottery.service.UserServiceImpl;
 import java.io.IOException;
@@ -63,7 +64,8 @@ public class UserController extends HttpServlet {
                 request.setAttribute("users", userService.findAll());
             }
             else if(action.equalsIgnoreCase("insert")){
-                request.setAttribute("user_id",0);
+                //User user = new User();
+                request.setAttribute("user",new User());
                 forward=insert_or_edit;
             }
             else if(action.equalsIgnoreCase("edit")){
@@ -96,6 +98,45 @@ public class UserController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        boolean isError = false;
+        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        request.setCharacterEncoding("UTF-8");
+        User user = new User();
+        String firstName = request.getParameter("first_name").replace("'","''");
+        String lastName = request.getParameter("last_name").replace("'","''");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password").replace("'", "''");
+        if(firstName.equalsIgnoreCase("") || firstName == null){
+            isError =true;
+            request.setAttribute("first_name_error", "Firstname can not be empty");
+        }
+        if(lastName.equalsIgnoreCase("") || lastName == null){
+            isError =true;
+            request.setAttribute("last_name_error", "Lastname can not be empty");
+        }
+        if(email.equalsIgnoreCase("") || email == null){
+            isError =true;
+            request.setAttribute("email_error", "Email can not be empty");
+        }
+         if (!request.getParameter("email").matches(EMAIL_REGEX)) {
+            request.setAttribute("email_error", "Incorrect email format");
+            isError = true;
+        }
+        if(password.equalsIgnoreCase("") || password == null){
+            isError =true;
+            request.setAttribute("password_error", "Password can not be empty");
+        }
+        if(!isError){
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setPassword(password);
+            userService.addUser(user);
+            String userId = request.getParameter("user_id");
+            
+        }
+        
     }
 
     /**
