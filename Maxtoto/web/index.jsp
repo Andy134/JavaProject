@@ -123,7 +123,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="/vi">
-                            <img  src="Content/images/maxtoto-02.png" alt="">
+                            <img style="width: 168px" src="Content/images/maxtoto-02.png" alt="">
                         </a>
                     </div>
 
