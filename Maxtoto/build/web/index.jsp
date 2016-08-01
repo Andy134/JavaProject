@@ -14,8 +14,8 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta http-equiv="content-language" content="vi"/>
         <title>MaxToTo</title>
-        <meta name="keywords" content="MaxToTo"/>
-        <meta name="description" content="MaxToTo"/>
+        <meta name="keywords" content="Maxtoto"/>
+        <meta name="description" content="Maxtoto"/>
         <meta name="robots" content="index, follow"/>
         <meta name="msvalidate.01" content=""/>
         <meta name="google-site-verification" content=""/>
@@ -25,7 +25,7 @@
         <!--<meta property="og:url" content="http://MaxToTo.vn:8001/"/>-->
         <meta property="og:title" content="Lottery"/>
         <meta property="og:description" content="Lottery"/>
-        <meta property="og:image" content="/Content/logo-MaxToTo.png" />
+        <meta property="og:image" content="/Content/logo-Maxtoto.png" />
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="500">
         <meta property="og:image:height" content="300">
