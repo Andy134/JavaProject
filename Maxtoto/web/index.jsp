@@ -13,19 +13,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta http-equiv="content-language" content="vi"/>
-        <title>Vietlott</title>
-        <meta name="keywords" content="Vietlott"/>
-        <meta name="description" content="Vietlott"/>
+        <title>MaxToTo</title>
+        <meta name="keywords" content="MaxToTo"/>
+        <meta name="description" content="MaxToTo"/>
         <meta name="robots" content="index, follow"/>
         <meta name="msvalidate.01" content=""/>
         <meta name="google-site-verification" content=""/>
-        <!--<link rel="canonical" href="http://vietlott.vn/"/>-->
+        <!--<link rel="canonical" href="http://MaxToTo.vn/"/>-->
         <!--<link rel="apple-touch-icon-precomposed" href="/content/frontend/images/favicon.png"/>-->
         <link rel="shortcut icon" href="Content/images/ico-vietlott-red.png" type="image/png">
-        <!--<meta property="og:url" content="http://vietlott.vn:8001/"/>-->
+        <!--<meta property="og:url" content="http://MaxToTo.vn:8001/"/>-->
         <meta property="og:title" content="Lottery"/>
         <meta property="og:description" content="Lottery"/>
-        <meta property="og:image" content="/Content/logo-vietlott.png" />
+        <meta property="og:image" content="/Content/logo-MaxToTo.png" />
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="500">
         <meta property="og:image:height" content="300">
