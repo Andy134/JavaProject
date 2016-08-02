@@ -5,6 +5,8 @@
  */
 package com.lottery.model;
 
+import java.util.Date;
+
 /**
  *
  * @author TuanAnh
@@ -14,8 +16,9 @@ public class Page {
     private String pageName;
     private String pageContent;
     private String pageSlug;
-    private int userId;
-    private String lastEdit;
+    private User user;
+    private Date publishDate;
+    private Date lastEdit;
     private int status;
 
     /**
@@ -77,30 +80,18 @@ public class Page {
     /**
      * @return the userId
      */
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
     /**
      * @param userId the userId to set
      */
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    /**
-     * @return the lastEdit
-     */
-    public String getLastEdit() {
-        return lastEdit;
-    }
-
-    /**
-     * @param lastEdit the lastEdit to set
-     */
-    public void setLastEdit(String lastEdit) {
-        this.lastEdit = lastEdit;
-    }
+   
 
     /**
      * @return the status
@@ -114,6 +105,34 @@ public class Page {
      */
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    /**
+     * @return the publishDate
+     */
+    public Date getPublishDate() {
+        return publishDate;
+    }
+
+    /**
+     * @param publishDate the publishDate to set
+     */
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    /**
+     * @return the lastEdit
+     */
+    public Date getLastEdit() {
+        return lastEdit;
+    }
+
+    /**
+     * @param lastEdit the lastEdit to set
+     */
+    public void setLastEdit(Date lastEdit) {
+        this.lastEdit = lastEdit;
     }
     
     

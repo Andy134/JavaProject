@@ -61,14 +61,14 @@
                                             </div>
                                             <span style="color: red;font-size: small"><c:out value="${email_error}" /></span>  
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Password</label>
                                                 <input type="password" name="password" class="form-control" placeholder="Email" value="<c:out value="${user.password}"/>">
                                             </div>
                                             <span style="color: red;font-size: small"><c:out value="${password_error}" /></span>  
                                         </div> 
-                                        <div class="col-md-1">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Gender</label>
                                                 <select class="form-control" name="user_gender"/>">
@@ -154,9 +154,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card card-user">
-                            <div class="image">
+                            <!--div class="image">
                                 <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
-                            </div>
+                            </div-->
                             <div class="content">
                                 <div class="author">
                                      <a href="#">

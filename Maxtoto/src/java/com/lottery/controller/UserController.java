@@ -46,7 +46,7 @@ public class UserController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -83,7 +83,7 @@ public class UserController extends HttpServlet {
                 request.setAttribute("users", userService.findAll());
             }
         }
-
+        userService.refreshConnectionPool();
         RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
     }
@@ -143,7 +143,7 @@ public class UserController extends HttpServlet {
             user.setUserRole(userRole);
             String userId = request.getParameter("user_id");
             if (userId == null || userId.equalsIgnoreCase("")) {
-                
+
                 userService.addUser(user);
             } else if (userService.findById(Integer.parseInt(userId)) != null) {
                 user.setUserId(Integer.parseInt(userId));
@@ -151,9 +151,10 @@ public class UserController extends HttpServlet {
             } else {
                 System.out.print("Can not found User");
             }
-
+            userService.refreshConnectionPool();
             response.sendRedirect("users.jsp");
         } else {
+            userService.refreshConnectionPool();
             request.setAttribute("user", user);
             RequestDispatcher view = request.getRequestDispatcher(insert_or_edit);
             view.forward(request, response);

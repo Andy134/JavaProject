@@ -65,7 +65,7 @@ public class UserDaoImpl extends BaseDAOImpl implements UserDao {
             pre.setString(6, user.getUserRole());
             pre.setDate(7, new java.sql.Date(user.getActiveDate().getTime()));
             pre.setString(8, user.getAvatar());
-            pre.setInt(10, user.getUserId());
+            pre.setInt(9, user.getUserId());
             return this.edit(pre); //To change body of generated methods, choose Tools | Templates.
         } catch (SQLException e) {
         }

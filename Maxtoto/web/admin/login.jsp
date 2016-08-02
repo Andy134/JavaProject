@@ -25,7 +25,7 @@
         response.sendRedirect("users.jsp");
     }
     else{
-        out.println("Email or Password not found");
+        out.println("Email or Password not found. Please try again <a href='index.jsp'>Log in</a>");
     }
 %>
 

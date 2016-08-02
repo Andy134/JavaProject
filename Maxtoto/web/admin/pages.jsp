@@ -1,6 +1,6 @@
 <%-- 
-    Document   : users.jsp
-    Created on : Jul 28, 2016, 8:15:26 PM
+    Document   : pages
+    Created on : Aug 2, 2016, 10:57:46 AM
     Author     : TuanAnh
 --%>
 <%
@@ -10,9 +10,7 @@
 <a href="index.jsp">Please Login</a>
 <%} else {
 %>
-<jsp:forward page="UserController?action=listUser" />
+<jsp:forward page="PageController?action=listPage" />
 <%
 }
 %>
-
-

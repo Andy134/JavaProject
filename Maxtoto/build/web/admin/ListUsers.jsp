@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-    if (((Integer) session.getAttribute("user_id") <= 0)) {
+    if (session.getAttribute("user_id") == null) {
 %>
 <p>You are not login </p><a href="index.jsp">Please login</a>
 <%

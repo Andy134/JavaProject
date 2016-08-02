@@ -1,6 +1,6 @@
 <%-- 
-    Document   : listUsers
-    Created on : Jul 28, 2016, 8:23:07 PM
+    Document   : ListPages
+    Created on : Aug 2, 2016, 11:20:05 AM
     Author     : TuanAnh
 --%>
 
@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <ol class="breadcrumb">
                     <li class="active">
-                        <i class="fa fa-users"></i> User Management
+                        <i class="fa fa-users"></i> Pages Management
                     </li>
                 </ol>
             </div>
@@ -41,9 +41,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">List of Users</h4>
+                        <h4 class="title">List of Pages</h4>
                          <div class="category pull-right">
-                            <a class="btn btn-success" href="UserController?action=insert">Add new</a>
+                            <a class="btn btn-success" href="PageController?action=insert">Add new</a>
                         </div>
                     </div>
                     <div class="content table-responsive table-full-width   ">
@@ -53,26 +53,23 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Active Date</th>
-                                    <th>Actions</th>
+                                    <th>Page Name</th>
+                                    <th>Page Slug</th>
+                                    <th>Publish Date</th>
+                                    <th>Last Edit</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${users}" var="user">
+                                <c:forEach items="${pages}" var="page">
                                     <tr>
-                                        <td><c:out value="${user.userId}" /></td>
-                                        <td><c:out value="${user.firstName}" /></td>
-                                        <td><c:out value="${user.lastName}" /></td>
-                                        <td><c:out value="${user.email}" /></td>
-                                        <td><c:out value="${user.userRole}" /></td>
-                                        <td><c:out value="${user.activeDate}" /></td>
+                                        <td><c:out value="${page.pageId}" /></td>
+                                        <td><c:out value="${page.pageName}" /></td>
+                                        <td><c:out value="${page.pageSlug}" /></td>
+                                        <td><c:out value="${page.publishDate}" /></td>
+                                        <td><c:out value="${page.lastEdit}" /></td>
                                         <td>
-                                            <a class="btn btn-default" href="UserController?action=edit&user_id=<c:out value="${user.userId}"/>"> Edit</a>  
-                                            <a class="btn btn-danger" href="UserController?action=delete&user_id=<c:out value="${user.userId}"/>"> Delete</a>
+                                            <a class="btn btn-default" href="PageController?action=edit&page_id=<c:out value="${page.pageId}"/>"> Edit</a>  
+                                            <a class="btn btn-danger" href="PageController?action=delete&page_id=<c:out value="${page.pageId}"/>"> Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

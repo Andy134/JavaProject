@@ -5,7 +5,10 @@
  */
 package main;
 
+import com.lottery.model.Page;
 import com.lottery.model.User;
+import com.lottery.service.PageService;
+import com.lottery.service.PageServiceImpl;
 import com.lottery.service.UserService;
 import com.lottery.service.UserServiceImpl;
 import java.text.DateFormat;
@@ -24,28 +27,32 @@ public class testService {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //UserService us = new UserServiceImpl(null);
+        //
+        
+        //List<User> listUser = us.findAll();
+        //for (User item : listUser) {
+        //    System.out.println(item.getFirstName());
+        //}
+        //us.refreshConnectionPool();
+        
+        PageService ps = new PageServiceImpl(null);
         UserService us = new UserServiceImpl(null);
-        User user = new User();
         
-        user.setFirstName("test1");
-        user.setLastName("test");
-        user.setGender(1);
-        user.setEmail("test@gmail.com");
-        user.setPassword("123");
-        user.setActiveDate(new Date());
-        user.setUserRole("user");
-        us.addUser(user);
-        
-        List<User> listUser = us.findAll();
-        for (User item : listUser) {
-            System.out.println(item.getFirstName());
-        }
-        
+        Page page = new Page();
+        User user = us.findById(3);
+        page.setPageId(10);
+        page.setPageName("hello world");
+        page.setPageContent("hello my friend");
+        page.setPageSlug("hello-world");
+        page.setPublishDate(new Date());
+        page.setLastEdit(new Date());
+        page.setStatus(0);
+        page.setUser(user);
+        ps.refreshConnectionPool();
+        us.refreshConnectionPool();
+        ps.addPage(page);
     }
-    public static String getToday() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
-    }
+   
 
 }

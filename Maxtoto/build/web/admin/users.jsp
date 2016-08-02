@@ -4,10 +4,10 @@
     Author     : TuanAnh
 --%>
 <%
-    if (((Integer) session.getAttribute("user_id") <= 0)) {
+    if (session.getAttribute("user_id") == null) {
 %> 
 <p>You are not login</p>
-<a href="index.html">Please Login</a>
+<a href="index.jsp">Please Login</a>
 <%} else {
 %>
 <jsp:forward page="UserController?action=listUser" />
