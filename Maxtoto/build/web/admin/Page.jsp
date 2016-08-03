@@ -47,13 +47,13 @@
                 <div class="content">
                    
                     <form action="PageController" method="Post" name="formPage" role="form">
-                        <input name="userid" type="hidden" class="form-control" disabled value=" <%= session.getAttribute("user_id") %> "/>
-
+                       
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>ID (disabled)</label>
-                                    <input name="page_id" type="text" class="form-control" disabled value="<c:out value="${page.pageId}"/>">
+                                    <input name="pid" type="text" class="form-control" disabled value="<c:out value="${page.pageId}"/>">
+                                    <input type="hidden" name="page_id" value="<c:out value="${page.pageId}"/>">
                                 </div>
                                 <span style="color: red;font-size: small"><c:out value="${page_id_error}" /></span>
                             </div>
@@ -71,7 +71,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea name="page_content" rows="5" class="form-control" placeholder="Here can be page content" ></textarea>
+                                    <textarea name="page_content" rows="5" class="form-control" placeholder="Here can be page content" ><c:out value="${page.pageContent}"/></textarea>
                                 </div>
                                 <span style="color: red;font-size: small"><c:out value="${page_content_error}" /></span>
                             </div>
@@ -89,8 +89,8 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Status</label>
                                     <select class="form-control" name="page_status"/>
-                                    <option ${page.status='0'?'selected':''}>Active</option>
-                                    <option ${page.status='1'?'selected':''}>Inactive</option>
+                                    <option ${page.status='0'?'selected':''} value="0">Active</option>
+                                    <option ${page.status='1'?'selected':''} value="1">Inactive</option>
                                     </select>
                                 </div>
                             </div>

@@ -70,25 +70,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="posts.jsp">
                         <i class="pe-7s-news-paper"></i>
                         <p>Posts</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="categories.jsp">
                         <i class="pe-7s-science"></i>
                         <p>Category</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="#">
                         <i class="pe-7s-map-marker"></i>
                         <p>Files</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="#">
                         <i class="pe-7s-bell"></i>
                         <p>Settings</p>
                     </a>

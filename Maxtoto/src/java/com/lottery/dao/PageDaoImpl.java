@@ -26,17 +26,16 @@ public class PageDaoImpl extends BaseDAOImpl implements PageDao {
     public boolean addPage(Page page) {
         try {
 
-            String sql = "Insert into pages(Page_Id, Page_Name, Page_Content, Page_Slug, User_Id, Publish_Date, Last_Edit, Status)  "
-                    + "values (?,?,?,?,?,?,?,?)";
+            String sql = "Insert into pages(Page_Name, Page_Content, Page_Slug, User_Id, Publish_Date, Last_Edit, Status)  "
+                    + "values (?,?,?,?,?,?,?)";
             PreparedStatement pre = this.connection.prepareStatement(sql);
-            pre.setInt(1, page.getPageId());
-            pre.setString(2, page.getPageName());
-            pre.setString(3, page.getPageContent());
-            pre.setString(4, page.getPageSlug());
-            pre.setInt(5, page.getUser().getUserId());
-            pre.setDate(6, new java.sql.Date(page.getPublishDate().getTime()));
-            pre.setDate(7, new java.sql.Date(page.getLastEdit().getTime()));
-            pre.setInt(8, page.getStatus());
+            pre.setString(1, page.getPageName());
+            pre.setString(2, page.getPageContent());
+            pre.setString(3, page.getPageSlug());
+            pre.setInt(4, page.getUser().getUserId());
+            pre.setDate(5, new java.sql.Date(page.getPublishDate().getTime()));
+            pre.setDate(6, new java.sql.Date(page.getLastEdit().getTime()));
+            pre.setInt(7, page.getStatus());
 
             return this.add(pre);
         } catch (SQLException e) {

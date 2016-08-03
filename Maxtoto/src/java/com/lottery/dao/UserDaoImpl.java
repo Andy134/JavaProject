@@ -28,20 +28,19 @@ public class UserDaoImpl extends BaseDAOImpl implements UserDao {
         try {
             
             String sql = "INSERT INTO users("
-                    + " User_Id, First_Name, Last_Name, Gender, "
+                    + " First_Name, Last_Name, Gender, "
                     + " Email, Password, User_Role, "
                     + " Active_Date, Avatar) "
-                    + " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pre = this.connection.prepareStatement(sql);
-            pre.setInt(1, user.getUserId());
-            pre.setString(2, user.getFirstName());
-            pre.setString(3, user.getLastName());
-            pre.setInt(4, user.getGender());
-            pre.setString(5, user.getEmail());
-            pre.setString(6, user.getPassword());
-            pre.setString(7, user.getUserRole());
-            pre.setDate(8, new java.sql.Date(user.getActiveDate().getTime()));
-            pre.setString(9, user.getAvatar());
+            pre.setString(1, user.getFirstName());
+            pre.setString(2, user.getLastName());
+            pre.setInt(3, user.getGender());
+            pre.setString(4, user.getEmail());
+            pre.setString(5, user.getPassword());
+            pre.setString(6, user.getUserRole());
+            pre.setDate(7, new java.sql.Date(user.getActiveDate().getTime()));
+            pre.setString(8, user.getAvatar());
             return this.add(pre);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -55,7 +54,7 @@ public class UserDaoImpl extends BaseDAOImpl implements UserDao {
         try {
             String sql = "UPDATE users SET First_Name=?, Last_Name=?, "
                     + " Gender=?, Email=?, Password=?, User_Role=?, "
-                    + " Active_Date=?, Avatar=? WHERE Post_ID = ?";
+                    + " Active_Date=?, Avatar=? WHERE User_Id = ?";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setString(1, user.getFirstName());
             pre.setString(2, user.getLastName());

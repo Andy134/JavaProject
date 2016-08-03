@@ -104,6 +104,7 @@ public class UserController extends HttpServlet {
         String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         request.setCharacterEncoding("UTF-8");
         User user = new User();
+        String userId = request.getParameter("user_id");
         String firstName = request.getParameter("first_name").replace("'", "''");
         String lastName = request.getParameter("last_name").replace("'", "''");
         String email = request.getParameter("email");
@@ -131,25 +132,25 @@ public class UserController extends HttpServlet {
             request.setAttribute("password_error", "Password can not be empty");
         }
         if (!isError) {
-
+            Date now = new Date();
+            
             user.setFirstName(firstName);
             user.setLastName(lastName);
             user.setPassword(password);
             user.setEmail(email);
             user.setPassword(password);
             user.setGender(gender);
-            Date now = new Date();
             user.setActiveDate(now);
             user.setUserRole(userRole);
-            String userId = request.getParameter("user_id");
-            if (userId == null || userId.equalsIgnoreCase("")) {
+            
+            if (userId == null || userId.equalsIgnoreCase("") || Integer.parseInt(userId)== 0) {
 
                 userService.addUser(user);
             } else if (userService.findById(Integer.parseInt(userId)) != null) {
                 user.setUserId(Integer.parseInt(userId));
                 userService.editUser(user);
             } else {
-                System.out.print("Can not found User");
+                System.out.print("Can not found user");
             }
             userService.refreshConnectionPool();
             response.sendRedirect("users.jsp");

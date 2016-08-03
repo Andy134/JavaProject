@@ -19,6 +19,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.jboss.weld.servlet.SessionHolder;
 
 /**
  *
@@ -31,6 +33,7 @@ public class PageController extends HttpServlet {
     private static final String insert_or_edit = "/admin/Page.jsp";
     private PageService pageService;
     private UserService userService;
+
     public PageController() {
         super();
         pageService = new PageServiceImpl(null);
@@ -86,6 +89,7 @@ public class PageController extends HttpServlet {
             }
         }
         pageService.refreshConnectionPool();
+        userService.refreshConnectionPool();
         RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
     }
@@ -105,13 +109,15 @@ public class PageController extends HttpServlet {
         boolean isError = false;
         request.setCharacterEncoding("UTF-8");
         Page page = new Page();
-        
+        String pageId = request.getParameter("page_id");
         String pageName = request.getParameter("page_name").replace("'", "''");
         String pageContent = request.getParameter("page_content").replace("'", "''");
         String pageSlug = request.getParameter("page_slug").replace("'", "''");
         String pageStatus = request.getParameter("page_status");
-        String userId = request.getParameter("userid");
-        
+
+        HttpSession session = request.getSession(true);
+        String userId = session.getAttribute("user_id").toString();
+
         if (pageName.equalsIgnoreCase("") || pageName == null) {
             isError = true;
             request.setAttribute("page_name_error", "Page Name can not be empty");
@@ -120,21 +126,21 @@ public class PageController extends HttpServlet {
             isError = true;
             request.setAttribute("page_content_error", "Page Content can not be empty");
         }
-  
-        
-        if (!isError) {
 
+        if (!isError) {
+            Date now = new Date();
             
             page.setPageName(pageName);
             page.setPageContent(pageContent);
             page.setPageSlug(pageSlug);
-            Date now = new Date();
+            
             page.setPublishDate(now);
             page.setLastEdit(now);
+
             page.setUser(userService.findById(Integer.parseInt(userId)));
             page.setStatus(Integer.parseInt(pageStatus));
-            String pageId = request.getParameter("page_id");
-            if (pageId == null || pageId.equalsIgnoreCase("")) {
+
+            if (pageId == null || pageId.equalsIgnoreCase("") || Integer.parseInt(pageId)==0) {
                 pageService.addPage(page);
             } else if (pageService.findById(Integer.parseInt(pageId)) != null) {
                 page.setPageId(Integer.parseInt(pageId));

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author TuanAnh
  */
-public class Page {
+public class Page implements java.io.Serializable{
     private int pageId;
     private String pageName;
     private String pageContent;

@@ -50,7 +50,8 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>ID (disabled)</label>
-                                    <input name="user_id" type="text" class="form-control" disabled value="<c:out value="${user.userId}"/>">
+                                    <input name="uid" type="text" class="form-control" disabled value="<c:out value="${user.userId}"/>">
+                                    <input name="user_id" type="hidden" value="<c:out value="${user.userId}"/>">
                                 </div>
                             </div>
 
