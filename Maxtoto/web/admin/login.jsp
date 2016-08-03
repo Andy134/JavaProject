@@ -21,11 +21,13 @@
         session.setAttribute("user_name", user.getFirstName()+" "+user.getLastName());
         session.setAttribute("user_role", user.getUserRole());
         session.setAttribute("user_id", user.getUserId());
-        
+     
         response.sendRedirect("users.jsp");
     }
     else{
+  
         out.println("Email or Password not found. Please try again <a href='index.jsp'>Log in</a>");
     }
+    us.refreshConnectionPool();
 %>
 

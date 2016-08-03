@@ -8,8 +8,11 @@ package com.lottery.controller;
 import com.lottery.model.Page;
 import com.lottery.service.PageService;
 import com.lottery.service.PageServiceImpl;
+import com.lottery.service.UserService;
+import com.lottery.service.UserServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,10 +30,11 @@ public class PageController extends HttpServlet {
     private static final String list_page = "/admin/ListPages.jsp";
     private static final String insert_or_edit = "/admin/Page.jsp";
     private PageService pageService;
-
+    private UserService userService;
     public PageController() {
         super();
         pageService = new PageServiceImpl(null);
+        userService = new UserServiceImpl(null);
     }
 
     /**
@@ -67,7 +71,6 @@ public class PageController extends HttpServlet {
                 forward = list_page;
                 request.setAttribute("pages", pageService.findAll());
             } else if (action.equalsIgnoreCase("insert")) {
-
                 request.setAttribute("page", new Page());
                 forward = insert_or_edit;
             } else if (action.equalsIgnoreCase("edit")) {
@@ -98,7 +101,55 @@ public class PageController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
+        boolean isError = false;
+        request.setCharacterEncoding("UTF-8");
+        Page page = new Page();
+        
+        String pageName = request.getParameter("page_name").replace("'", "''");
+        String pageContent = request.getParameter("page_content").replace("'", "''");
+        String pageSlug = request.getParameter("page_slug").replace("'", "''");
+        String pageStatus = request.getParameter("page_status");
+        String userId = request.getParameter("userid");
+        
+        if (pageName.equalsIgnoreCase("") || pageName == null) {
+            isError = true;
+            request.setAttribute("page_name_error", "Page Name can not be empty");
+        }
+        if (pageContent.equalsIgnoreCase("") || pageContent == null) {
+            isError = true;
+            request.setAttribute("page_content_error", "Page Content can not be empty");
+        }
+  
+        
+        if (!isError) {
 
+            
+            page.setPageName(pageName);
+            page.setPageContent(pageContent);
+            page.setPageSlug(pageSlug);
+            Date now = new Date();
+            page.setPublishDate(now);
+            page.setLastEdit(now);
+            page.setUser(userService.findById(Integer.parseInt(userId)));
+            page.setStatus(Integer.parseInt(pageStatus));
+            String pageId = request.getParameter("page_id");
+            if (pageId == null || pageId.equalsIgnoreCase("")) {
+                pageService.addPage(page);
+            } else if (pageService.findById(Integer.parseInt(pageId)) != null) {
+                page.setPageId(Integer.parseInt(pageId));
+                pageService.editPage(page);
+            } else {
+                System.out.print("Can not found Page");
+            }
+            pageService.refreshConnectionPool();
+            response.sendRedirect("pages.jsp");
+        } else {
+            pageService.refreshConnectionPool();
+            request.setAttribute("page", page);
+            RequestDispatcher view = request.getRequestDispatcher(insert_or_edit);
+            view.forward(request, response);
+        }
     }
 
     /**

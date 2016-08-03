@@ -139,8 +139,12 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="UserController?action=edit&selfedit=y&user_id=<c:out value="${sessionScope.user_id}"/>">
-                            <strong><c:out value="${sessionScope.user_name}"/></strong></a>
+                        <%
+                            int userId = (Integer)session.getAttribute("user_id");
+                            String userName = (String)session.getAttribute("user_name");
+                        %>
+                        <li><a href="UserController?action=edit&selfedit=y&user_id=<%=userId%>">
+                            <strong><%=userName%></strong></a>
                         </li>
                         <li class="dropdown">
                               <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">
