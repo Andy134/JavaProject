@@ -7,18 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-    if (session.getAttribute("user_id") == null) {
-%>
-<p>You are not login </p><a href="index.jsp">Please login</a>
-<%
-} else if (!session.getAttribute("user_role").equals("admin")) {
-%>
-<p>You are not authorized to access this page </p>
-<a href="javascript:history.back()">go back</a>
-<%
-} else {
-%>
+<%@include file="validation/authorize.jsp" %>
 <%@ include file="header.jsp" %>
 <!--  #page-wrapper -->
 <div id="content">
@@ -67,7 +56,15 @@
                                         <td><c:out value="${post.postSlug}" /></td>
                                         <td><c:out value="${post.publishDate}" /></td>
                                         <td><c:out value="${post.lastEdit}" /></td>
-                                        <td><c:out value="${post.status}" /></td>
+                                         <td><c:choose>
+                                                <c:when test="${post.status == 0}">
+                                                    Active
+                                                </c:when>
+                                                <c:otherwise>
+                                                    InActive
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
                                         <td>
                                             <a class="btn btn-default" href="PostController?action=edit&post_id=<c:out value="${post.postId}"/>"> Edit</a>  
                                             <a class="btn btn-danger" href="PostController?action=delete&post_id=<c:out value="${post.postId}"/>"> Delete</a>

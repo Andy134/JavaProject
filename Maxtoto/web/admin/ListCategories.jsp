@@ -7,18 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-    if (session.getAttribute("user_id") == null) {
-%>
-<p>You are not login </p><a href="index.jsp">Please login</a>
-<%
-} else if (!session.getAttribute("user_role").equals("admin")) {
-%>
-<p>You are not authorized to access this page </p>
-<a href="javascript:history.back()">go back</a>
-<%
-} else {
-%>
+<%@include file="validation/authorize.jsp" %>
 <%@ include file="header.jsp" %>
 <!--  #page-wrapper -->
 <div id="content">

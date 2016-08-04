@@ -26,7 +26,7 @@ public class PostDaoImpl extends BaseDAOImpl implements PostDao {
     @Override
     public boolean addPost(Post post) {
         try {
-            String sql = "Insert into posts(Post_Name, Cat_Id, User_Id, Post_Content, Post_Slug, Publish_Date, Last_Edit, Image, Num_Views, Status)  "
+            String sql = "Insert into posts(Post_Name, Category_Id, User_Id, Post_Content, Post_Slug, Publish_Date, Last_Edit, Image, Num_Views, Status)  "
                     + "values (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setString(1, post.getPostName());
@@ -51,22 +51,20 @@ public class PostDaoImpl extends BaseDAOImpl implements PostDao {
     @Override
     public boolean editPost(Post post) {
          try {
-            String sql = "Update posts Set Post_Name=?, Cat_Id=?, User_Id=?, Post_Content=?, Post_Slug=?, "
-                        + "Publish_Date=?, Last_Edit=?, Image=?, Num_Views=?, Status=?"
-                        + "Where Post_Id = ?";
+            String sql = "Update posts Set Post_Name=?, Category_Id=?, User_Id=?, Post_Content=?, Post_Slug=?, Last_Edit=?, Image=?, Num_Views=?, Status=? "
+                        +" Where Post_Id = ?";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setString(1, post.getPostName());
             pre.setInt(2, post.getCategory().getCatId());
             pre.setInt(3, post.getUser().getUserId());
             pre.setString(4, post.getPostContent());
             pre.setString(5, post.getPostSlug());
-            pre.setDate(6, new java.sql.Date(post.getPublishDate().getTime()));
-            pre.setDate(7, new java.sql.Date(post.getLastEdit().getTime()));
-            pre.setString(8, post.getImage());
-            pre.setInt(9, post.getNumView());
-            pre.setInt(10, post.getStatus());
+            pre.setDate(6, new java.sql.Date(post.getLastEdit().getTime()));
+            pre.setString(7, post.getImage());
+            pre.setInt(8, post.getNumView());
+            pre.setInt(9, post.getStatus());
             
-            pre.setInt(11, post.getPostId());
+            pre.setInt(10, post.getPostId());
 
             return this.edit(pre); //To change body of generated methods, choose Tools | Templates.
         } catch (SQLException e) {

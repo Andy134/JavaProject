@@ -7,18 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-    if (session.getAttribute("user_id") == null) {
-%>
-<p>You are not login </p><a href="index.jsp">Please login</a>
-<%
-} else if (!session.getAttribute("user_role").equals("admin")) {
-%>
-<p>You are not authorized to access this page </p>
-<a href="javascript:history.back()">go back</a>
-<%
-} else {
-%>
+<%@include file="validation/authorize.jsp" %>
 <%@ include file="header.jsp" %>
 <!--  #page-wrapper -->
 <div id="content">
@@ -42,12 +31,12 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">List of Pages</h4>
-                         <div class="category pull-right">
+                        <div class="category pull-right">
                             <a class="btn btn-success" href="PageController?action=insert">Add new</a>
                         </div>
                     </div>
                     <div class="content table-responsive table-full-width   ">
-                       
+
 
                         <table class="table table-hover table-striped">
                             <thead>
@@ -57,6 +46,7 @@
                                     <th>Page Slug</th>
                                     <th>Publish Date</th>
                                     <th>Last Edit</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +57,16 @@
                                         <td><c:out value="${page.pageSlug}" /></td>
                                         <td><c:out value="${page.publishDate}" /></td>
                                         <td><c:out value="${page.lastEdit}" /></td>
+
+                                        <td><c:choose>
+                                                <c:when test="${page.status == 0}">
+                                                    Active
+                                                </c:when>
+                                                <c:otherwise>
+                                                    InActive
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
                                         <td>
                                             <a class="btn btn-default" href="PageController?action=edit&page_id=<c:out value="${page.pageId}"/>"> Edit</a>  
                                             <a class="btn btn-danger" href="PageController?action=delete&page_id=<c:out value="${page.pageId}"/>"> Delete</a>

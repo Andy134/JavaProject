@@ -74,7 +74,7 @@ public class UserController extends HttpServlet {
             } else if (action.equalsIgnoreCase("edit")) {
                 forward = insert_or_edit;
                 String user_id = request.getParameter("user_id");
-                int userId = Integer.parseInt(request.getParameter("user_id"));
+                int userId = Integer.parseInt(user_id);
                 request.setAttribute("user", userService.findById(userId));
             } else if (action.equalsIgnoreCase("delete")) {
                 forward = list_user;
@@ -161,7 +161,7 @@ public class UserController extends HttpServlet {
             view.forward(request, response);
 
         }
-
+        userService.refreshConnectionPool();
     }
 
     /**

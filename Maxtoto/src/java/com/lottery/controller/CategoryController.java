@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -69,7 +70,7 @@ public class CategoryController extends HttpServlet {
                 forward = list_category;
                 request.setAttribute("categories", categoryService.findAll());
             } else if (action.equalsIgnoreCase("insert")) {
-                request.setAttribute("categories", new Category());
+                request.setAttribute("category", new Category());
                 forward = insert_or_edit;
             } else if (action.equalsIgnoreCase("edit")) {
                 forward = insert_or_edit;
@@ -101,8 +102,42 @@ public class CategoryController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        
+        boolean isError = false;
+        request.setCharacterEncoding("UTF-8");
+        Category cat = new Category();
+        String catId = request.getParameter("category_id");
+        String catName = request.getParameter("category_name").replace("'", "''");
+        String catDesc = request.getParameter("category_desc").replace("'", "''");
+        String catSlug = request.getParameter("category_slug").replace("'", "''");
+        String catPath = request.getParameter("category_path");
+
+        if (catName.equalsIgnoreCase("") || catName == null) {
+            isError = true;
+            request.setAttribute("category_name_error", "Page Name can not be empty");
+        }
+        if (!isError) {
+            cat.setCatName(catName);
+            cat.setCatDesc(catDesc);
+            cat.setSlug(catSlug);
+            cat.setPath(catPath);
+
+            if (catId == null || catId.equalsIgnoreCase("") || Integer.parseInt(catId)==0) {
+                categoryService.addCategory(cat);
+            } else if (categoryService.findById(Integer.parseInt(catId)) != null) {
+                cat.setCatId(Integer.parseInt(catId));
+                categoryService.editCategory(cat);
+            } else {
+                System.out.print("Can not found Category");
+            }
+            categoryService.refreshConnectionPool();
+            response.sendRedirect("categories.jsp");
+        } else {
+            categoryService.refreshConnectionPool();
+            request.setAttribute("category", cat);
+            RequestDispatcher view = request.getRequestDispatcher(insert_or_edit);
+            view.forward(request, response);
+        }
+        categoryService.refreshConnectionPool();
     }
 
     /**

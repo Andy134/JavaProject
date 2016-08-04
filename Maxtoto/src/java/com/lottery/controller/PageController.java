@@ -156,6 +156,7 @@ public class PageController extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher(insert_or_edit);
             view.forward(request, response);
         }
+        pageService.refreshConnectionPool();
     }
 
     /**
