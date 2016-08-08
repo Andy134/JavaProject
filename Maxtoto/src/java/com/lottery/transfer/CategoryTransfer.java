@@ -62,16 +62,26 @@ public class CategoryTransfer {
         if (rs != null) {
             list = new ArrayList<Category>();
             Category category = null;
+            Category parentCat = null;
             try {
                 // lap cho den khi het ban ghi
                 while (rs.next()) {
                     category = new Category();
+                    parentCat = new Category();
+
                     category.setCatId(rs.getInt(1));
                     category.setCatName(rs.getString(2));
                     category.setCatDesc(rs.getString(3));
                     category.setSlug(rs.getString(4));
                     category.setPath(rs.getString(5));
-                    category.setParentId(rs.getInt(6));
+
+                    parentCat.setCatId(rs.getInt(7));
+                    parentCat.setCatName(rs.getString(8));
+                    parentCat.setCatDesc(rs.getString(9));
+                    parentCat.setSlug(rs.getString(10));
+                    parentCat.setPath(rs.getString(11));
+
+                    category.setParentId(parentCat);
                     list.add(category);
                 }
 
@@ -89,17 +99,26 @@ public class CategoryTransfer {
         if (rs != null) {
             list = new ArrayList<Category>();
             Category category = null;
-
+            Category parentCat = null;
             try {
                 // lap cho den khi het ban ghi
                 while (rs.next()) {
                     category = new Category();
+                    parentCat = new Category();
+
                     category.setCatId(rs.getInt(1));
                     category.setCatName(rs.getString(2));
                     category.setCatDesc(rs.getString(3));
                     category.setSlug(rs.getString(4));
                     category.setPath(rs.getString(5));
-                    category.setParentId(rs.getInt(6));
+
+                    parentCat.setCatId(rs.getInt(7));
+                    parentCat.setCatName(rs.getString(8));
+                    parentCat.setCatDesc(rs.getString(9));
+                    parentCat.setSlug(rs.getString(10));
+                    parentCat.setPath(rs.getString(11));
+
+                    category.setParentId(parentCat);
                     list.add(category);
                 }
 
@@ -112,39 +131,55 @@ public class CategoryTransfer {
 
     public Category findById(int id) {
         Category category = null;
+        Category parentCat = null;
         ResultSet rs = this.categoryDao.findById(id);
         try {
             if (rs != null && rs.next()) {
                 category = new Category();
+                parentCat = new Category();
 
                 category.setCatId(rs.getInt(1));
                 category.setCatName(rs.getString(2));
                 category.setCatDesc(rs.getString(3));
                 category.setSlug(rs.getString(4));
                 category.setPath(rs.getString(5));
-                category.setParentId(rs.getInt(6));
 
+                parentCat.setCatId(rs.getInt(7));
+                parentCat.setCatName(rs.getString(8));
+                parentCat.setCatDesc(rs.getString(9));
+                parentCat.setSlug(rs.getString(10));
+                parentCat.setPath(rs.getString(11));
+
+                category.setParentId(parentCat);
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserTransfer.class.getName()).log(Level.SEVERE, null, ex);
         }
         return category;
     }
-    
+
     public Category findByParentId(int id) {
         Category category = null;
+        Category parentCat = null;
         ResultSet rs = this.categoryDao.findByParentId(id);
         try {
             if (rs != null && rs.next()) {
                 category = new Category();
+                parentCat = new Category();
 
                 category.setCatId(rs.getInt(1));
                 category.setCatName(rs.getString(2));
                 category.setCatDesc(rs.getString(3));
                 category.setSlug(rs.getString(4));
                 category.setPath(rs.getString(5));
-                category.setParentId(rs.getInt(6));
 
+                parentCat.setCatId(rs.getInt(7));
+                parentCat.setCatName(rs.getString(8));
+                parentCat.setCatDesc(rs.getString(9));
+                parentCat.setSlug(rs.getString(10));
+                parentCat.setPath(rs.getString(11));
+
+                category.setParentId(parentCat);
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserTransfer.class.getName()).log(Level.SEVERE, null, ex);

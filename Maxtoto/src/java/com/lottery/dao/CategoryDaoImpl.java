@@ -73,14 +73,14 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
 
     @Override
     public ResultSet findAll() {
-        String sql = "SELECT * FROM categories inner join categories using(Parent_ID);";
+        String sql = "SELECT * FROM categories as child inner join categories as parent on child.Parent_Id = parent.Category_Id";
         return this.get(sql); 
     }
 
     @Override
     public ResultSet find(int start, int limit) {
         try {
-            String sql = "SELECT * FROM categories"
+            String sql = "SELECT * FROM categories as child inner join categories as parent on child.Parent_Id = parent.Category_Id"
                     + " LIMIT ?, ?";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setInt(1, start);
@@ -95,7 +95,7 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
     @Override
     public ResultSet findById(int id) {
          try {
-            String sql = "SELECT * FROM categories WHERE Category_Id = ?";
+            String sql = "SELECT * FROM categories as child inner join categories as parent on child.Parent_Id = parent.Category_Id Where child.Category_Id = ?";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setInt(1, id);
             return this.get(pre);
@@ -108,7 +108,7 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
     @Override
     public ResultSet findByParentId(int id) {
          try {
-            String sql = "SELECT * FROM categories WHERE Parent_Id = ?";
+            String sql = "SELECT * FROM categories as child inner join categories as parent on child.Parent_Id = parent.Category_Id WHERE Parent_Id = ?";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setInt(1, id);
             return this.get(pre);

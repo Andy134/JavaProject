@@ -56,7 +56,7 @@
                                         <td><c:out value="${category.catDesc}" /></td>
                                         <td><c:out value="${category.slug}" /></td>
                                         <td><c:out value="${category.path}" /></td>
-                                        <td><c:out value="${category.parentId}" /></td>
+                                        <td><c:out value="${category.parentId.catName}" /></td>
                                         <td>
                                             <a class="btn btn-default" href="CategoryController?action=edit&category_id=<c:out value="${category.catId}"/>"> Edit</a>  
                                             <a class="btn btn-danger" href="CategoryController?action=delete&category_id=<c:out value="${category.catId}"/>"> Delete</a>
