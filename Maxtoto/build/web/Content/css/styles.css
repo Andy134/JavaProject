@@ -36,7 +36,7 @@ and open the template in the editor.
 
 /*Common*/
 
-body {font-family: 'Roboto', sans-serif; color:#555}
+body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color:#555}
 .wrap {max-width:1230px; margin:0 auto}
 
 a {color:#dd2a3c}

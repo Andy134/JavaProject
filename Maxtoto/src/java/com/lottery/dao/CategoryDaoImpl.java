@@ -24,14 +24,14 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
     @Override
     public boolean addCategory(Category category) {
         try {
-            String sql = "Insert into categories(Category_Name, Category_Desc, Slug, Path)  "
-                    + "values (?,?,?,?)";
+            String sql = "Insert into categories(Category_Name, Category_Desc, Slug, Path, Parent_Id)  "
+                    + "values (?,?,?,?,?)";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setString(1, category.getCatName());
             pre.setString(2, category.getCatDesc());
             pre.setString(3, category.getSlug());
             pre.setString(4, category.getPath());
-
+            pre.setInt(5, category.getParentId().getCatId());
             return this.add(pre);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -44,14 +44,15 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
     public boolean editCategory(Category category) {
         try {
             String sql = "Update categories Set Category_Name=?, "
-                    + "Category_Desc=?, Slug=?, Path=? "
+                    + "Category_Desc=?, Slug=?, Path=? , Parent_Id=?"
                     + "Where Category_Id = ?";
             PreparedStatement pre = this.connection.prepareStatement(sql);
             pre.setString(1, category.getCatName());
             pre.setString(2, category.getCatDesc());
             pre.setString(3, category.getSlug());
             pre.setString(4, category.getPath());
-            pre.setInt(5, category.getCatId());
+            pre.setInt(5, category.getParentId().getCatId());
+            pre.setInt(6, category.getCatId());
             return this.edit(pre); //To change body of generated methods, choose Tools | Templates.
         } catch (SQLException e) {
         }
@@ -72,7 +73,7 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
 
     @Override
     public ResultSet findAll() {
-        String sql = "SELECT * FROM categories;";
+        String sql = "SELECT * FROM categories inner join categories using(Parent_ID);";
         return this.get(sql); 
     }
 
@@ -102,6 +103,19 @@ public class CategoryDaoImpl extends BaseDAOImpl implements CategoryDao{
             e.printStackTrace();
         }
         return null; //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ResultSet findByParentId(int id) {
+         try {
+            String sql = "SELECT * FROM categories WHERE Parent_Id = ?";
+            PreparedStatement pre = this.connection.prepareStatement(sql);
+            pre.setInt(1, id);
+            return this.get(pre);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;//To change body of generated methods, choose Tools | Templates.
     }
     
 }

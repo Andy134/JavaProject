@@ -20,5 +20,5 @@ public interface CategoryDao extends BaseDAO{
     //Lay danh sach post theo phan trang
     public ResultSet find(int start, int limit);
     public ResultSet findById(int id);
-
+    public ResultSet findByParentId(int id);
 }

@@ -70,6 +70,7 @@ public class CategoryController extends HttpServlet {
                 forward = list_category;
                 request.setAttribute("categories", categoryService.findAll());
             } else if (action.equalsIgnoreCase("insert")) {
+                request.setAttribute("categories", categoryService.findAll());
                 request.setAttribute("category", new Category());
                 forward = insert_or_edit;
             } else if (action.equalsIgnoreCase("edit")) {
@@ -77,6 +78,7 @@ public class CategoryController extends HttpServlet {
                 String cat_id = request.getParameter("category_id");
                 int catId = Integer.parseInt(cat_id);
                 request.setAttribute("category", categoryService.findById(catId));
+                request.setAttribute("categories", categoryService.findAll());
             } else if (action.equalsIgnoreCase("delete")) {
                 forward = list_category;
                 int catId = Integer.parseInt(request.getParameter("category_id"));

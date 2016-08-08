@@ -15,7 +15,8 @@ public class Category {
     private String catDesc;
     private String slug;
     private String path;
-
+    private Category parentId;
+    
     /**
      * @return the catId
      */
@@ -84,5 +85,19 @@ public class Category {
      */
     public void setPath(String path) {
         this.path = path;
+    }
+
+    /**
+     * @return the parentId
+     */
+    public Category getParentId() {
+        return parentId;
+    }
+
+    /**
+     * @param parentId the parentId to set
+     */
+    public void setParentId(Category parentId) {
+        this.parentId = parentId;
     }
 }

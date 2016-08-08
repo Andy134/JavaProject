@@ -71,7 +71,7 @@ public class CategoryTransfer {
                     category.setCatDesc(rs.getString(3));
                     category.setSlug(rs.getString(4));
                     category.setPath(rs.getString(5));
-
+                    category.setParentId(rs.getInt(6));
                     list.add(category);
                 }
 
@@ -99,6 +99,7 @@ public class CategoryTransfer {
                     category.setCatDesc(rs.getString(3));
                     category.setSlug(rs.getString(4));
                     category.setPath(rs.getString(5));
+                    category.setParentId(rs.getInt(6));
                     list.add(category);
                 }
 
@@ -121,6 +122,28 @@ public class CategoryTransfer {
                 category.setCatDesc(rs.getString(3));
                 category.setSlug(rs.getString(4));
                 category.setPath(rs.getString(5));
+                category.setParentId(rs.getInt(6));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserTransfer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return category;
+    }
+    
+    public Category findByParentId(int id) {
+        Category category = null;
+        ResultSet rs = this.categoryDao.findByParentId(id);
+        try {
+            if (rs != null && rs.next()) {
+                category = new Category();
+
+                category.setCatId(rs.getInt(1));
+                category.setCatName(rs.getString(2));
+                category.setCatDesc(rs.getString(3));
+                category.setSlug(rs.getString(4));
+                category.setPath(rs.getString(5));
+                category.setParentId(rs.getInt(6));
 
             }
         } catch (SQLException ex) {

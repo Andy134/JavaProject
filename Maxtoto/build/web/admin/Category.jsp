@@ -60,19 +60,31 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Category Slug</label>
                                         <input name="category_slug" type="text" class="form-control" value="<c:out value="${category.slug}"/>">
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Category Path</label>
                                         <input name="category_path" type="text" class="form-control" value="<c:out value="${category.path}"/>">
                                     </div>
                                 </div>
+                                    
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select class="form-control" name="category">
+                                            <c:forEach items="${categories}" var="cat">
+                                                <option value="<c:out value="${cat.catId}"/>" ${cat.catId==category.catId?'selected':''}><c:out value="${cat.catName}"/></option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+
+                                </div>    
                             </div>
 
 
