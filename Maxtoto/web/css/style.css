@@ -1,0 +1,17 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 12, 2016, 3:40:22 PM
+    Author     : tuananh
+*/
+
+.navbar-custom .nav li a, .navbar-custom .navbar-toggle{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+}
+a.navbar-brand.page-scroll{
+    padding-top: 0px;
+}

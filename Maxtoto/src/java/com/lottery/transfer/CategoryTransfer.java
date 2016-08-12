@@ -74,14 +74,6 @@ public class CategoryTransfer {
                     category.setCatDesc(rs.getString(3));
                     category.setSlug(rs.getString(4));
                     category.setPath(rs.getString(5));
-
-                    parentCat.setCatId(rs.getInt(7));
-                    parentCat.setCatName(rs.getString(8));
-                    parentCat.setCatDesc(rs.getString(9));
-                    parentCat.setSlug(rs.getString(10));
-                    parentCat.setPath(rs.getString(11));
-
-                    category.setParentId(parentCat);
                     list.add(category);
                 }
 
@@ -112,13 +104,6 @@ public class CategoryTransfer {
                     category.setSlug(rs.getString(4));
                     category.setPath(rs.getString(5));
 
-                    parentCat.setCatId(rs.getInt(7));
-                    parentCat.setCatName(rs.getString(8));
-                    parentCat.setCatDesc(rs.getString(9));
-                    parentCat.setSlug(rs.getString(10));
-                    parentCat.setPath(rs.getString(11));
-
-                    category.setParentId(parentCat);
                     list.add(category);
                 }
 
@@ -144,13 +129,6 @@ public class CategoryTransfer {
                 category.setSlug(rs.getString(4));
                 category.setPath(rs.getString(5));
 
-                parentCat.setCatId(rs.getInt(7));
-                parentCat.setCatName(rs.getString(8));
-                parentCat.setCatDesc(rs.getString(9));
-                parentCat.setSlug(rs.getString(10));
-                parentCat.setPath(rs.getString(11));
-
-                category.setParentId(parentCat);
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserTransfer.class.getName()).log(Level.SEVERE, null, ex);
@@ -173,13 +151,6 @@ public class CategoryTransfer {
                 category.setSlug(rs.getString(4));
                 category.setPath(rs.getString(5));
 
-                parentCat.setCatId(rs.getInt(7));
-                parentCat.setCatName(rs.getString(8));
-                parentCat.setCatDesc(rs.getString(9));
-                parentCat.setSlug(rs.getString(10));
-                parentCat.setPath(rs.getString(11));
-
-                category.setParentId(parentCat);
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserTransfer.class.getName()).log(Level.SEVERE, null, ex);
