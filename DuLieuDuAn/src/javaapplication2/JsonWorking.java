@@ -55,6 +55,8 @@ public class JsonWorking {
                 }.getType());
                 project.setEmail(removeHtmlTags(project.getEmail()));
                 project.setMobile(project.getMobile().replaceFirst("\\r\\n ", ""));
+                
+                
                 projectList.add(project);
             }
 

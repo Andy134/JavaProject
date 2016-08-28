@@ -21,7 +21,7 @@ public class Project {
     
     private String address;
     private String email;
-    private Description description;
+    private Object description;
 
     /**
      * @return the fax
@@ -134,14 +134,14 @@ public class Project {
     /**
      * @return the description
      */
-    public Description getDescription() {
+    public Object getDescription() {
         return description;
     }
 
     /**
      * @param description the description to set
      */
-    public void setDescription(Description description) {
+    public void setDescription(Object description) {
         this.description = description;
     }
 

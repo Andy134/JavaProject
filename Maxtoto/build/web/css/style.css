@@ -15,3 +15,7 @@ and open the template in the editor.
 a.navbar-brand.page-scroll{
     padding-top: 0px;
 }
+.portfolio-img img{
+    width: 400px; 
+    height: 289px;  
+}

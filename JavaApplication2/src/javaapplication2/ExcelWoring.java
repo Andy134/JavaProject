@@ -254,7 +254,7 @@ public class ExcelWoring {
         // Using XSSF for xlsx format, for xls use HSSF
         Workbook workbook = new XSSFWorkbook();
         Sheet agencySheet = workbook.createSheet("Agency");
-        String des, scale, nameofagency, location, info;
+        String des, scale, nameofagency, location, info, avatar;
         String stt, name, address, mobile, email, phone, website, city;
         String scaleDelimit = "Khu vực";
         int scaleType = 0;
@@ -276,8 +276,10 @@ public class ExcelWoring {
             row.createCell(cellIndex++).setCellValue("Địa phương");
             row.createCell(cellIndex++).setCellValue("Điện thoại");
             row.createCell(cellIndex++).setCellValue("Di động");
+            
             row.createCell(cellIndex++).setCellValue("Email");
             row.createCell(cellIndex++).setCellValue("Website");
+            row.createCell(cellIndex++).setCellValue("Avatar");
             row.createCell(cellIndex++).setCellValue("Nội dung tự giới thiệu");
             
             row.createCell(cellIndex++).setCellValue("Khu vực môi giới");
@@ -285,6 +287,7 @@ public class ExcelWoring {
         for (Agency agency : agencyList) {
             des = agency.getDescription();
             name = agency.getName();
+            avatar = agency.getAvatar();
             // DESCRIPTION
             // Split Scale information
            
@@ -349,6 +352,8 @@ public class ExcelWoring {
             row.createCell(cellIndex++).setCellValue(mobile);
             row.createCell(cellIndex++).setCellValue(email);
             row.createCell(cellIndex++).setCellValue(website);
+            row.createCell(cellIndex++).setCellValue(avatar);
+            
             row.createCell(cellIndex++).setCellValue(des);
             row.createCell(cellIndex++).setCellValue(location);
         }
