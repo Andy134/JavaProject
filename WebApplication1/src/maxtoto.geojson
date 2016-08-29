@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Số nhà 57, Đường Ngô Tât Tố, Phường 21, Quận Bình Thạnh, Tp. Hồ Chí Minh",
+        "marker-color": "#008000",
+        "marker-symbol": "rail-metro",
+        "line": "green"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.793094, 106.710669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Số nhà 67/26, Đường Đinh Tiên Hoàng, Phường 2, Quận Bình Thạnh, Tp. Hồ Chí Minh",
+        "marker-color": "#0000ff",
+        "marker-symbol": "rail-metro",
+        "line": "blue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.795871, 106.694452
+        ]
+      }
+    }
+  ]
+}
